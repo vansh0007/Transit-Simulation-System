@@ -1,10 +1,15 @@
 package sqa;
 
+import java.io.IOException;
 import java.util.*;
 
 public class Working {
 
-	public static void main(String[] args) {
+	static Stack<String> porta = new Stack<>();
+	static Stack<String> portb = new Stack<>();
+	static int bus_battery_capacity;
+
+	public static void main(String[] args) throws IOException {
 		Scanner scan = new Scanner(System.in);
 
 		HashMap<Integer, HashMap<String, Integer>> Bus_config = new HashMap<Integer, HashMap<String, Integer>>();
@@ -37,7 +42,7 @@ public class Working {
 		int charger_price = Integer.parseInt(scan.nextLine());
 
 		float charging_time = (float) Bus_config.get(bus_type).get(battery_type) / charger_config.get(charger_type);
-		int bus_battery_capacity = Bus_config.get(bus_type).get(battery_type);
+		bus_battery_capacity = Bus_config.get(bus_type).get(battery_type);
 		System.out.println("The selected battery capacity is : " + bus_battery_capacity);
 		int a = 10;
 		int busCount = 0;
@@ -53,6 +58,17 @@ public class Working {
 		int total_bus = 0;
 
 		ArrayList<String> Schedule1 = new ArrayList<>();
+		ArrayList<String> west = FileRead.getWest();
+		ArrayList<String> east = EastRead.getEast();
+		for (int i = 0; i < west.size(); i++) {
+			Schedule1.add(west.get(i));
+
+		}
+
+		for (int i = 0; i < east.size(); i++) {
+			Schedule1.add(east.get(i));
+
+		}
 
 		Schedule1.add("A 0");
 		Schedule1.add("A 0");
@@ -68,23 +84,21 @@ public class Working {
 //		Schedule1.add("A 130");
 //		Schedule1.add("B 135");
 
-		Stack<String> porta = new Stack<>();
 		Stack<String> portb = new Stack<>();
 		Stack<String> buses = new Stack<>();
-		buses.add("bus3" + " " + bus_battery_capacity);
-		buses.add("bus4" + " " + bus_battery_capacity);
-		buses.add("bus5" + " " + bus_battery_capacity);
-		buses.add("bus6" + " " + bus_battery_capacity);
-		buses.add("bus7" + " " + bus_battery_capacity);
-		buses.add("bus8" + " " + bus_battery_capacity);
+		for (int i = 3; i < 1000; i++) {
+			buses.add("bus" + i + " " + bus_battery_capacity);
 
-		buses.add("bus9" + " " + bus_battery_capacity);
-		porta.add("bus" + " " + bus_battery_capacity);
+		}
+
+		porta.add("bus1" + " " + bus_battery_capacity);
 		portb.add("bus2" + " " + bus_battery_capacity);
 
 		ArrayList<String> intransit = new ArrayList<>();
 		for (int i = 0; i < limit; i++) {
 			Time = i;
+
+			chargeingBuses(Time);
 
 			for (int j = 0; j < Schedule1.size(); j++) {
 
@@ -95,16 +109,18 @@ public class Working {
 				if (Time == val) {
 
 					if (port.equalsIgnoreCase("A")) {
-						if (A != 0 && !porta.isEmpty()) {
+						PA: if (A != 0 && !porta.isEmpty()) {
 							A--;
 							String valu1 = porta.pop();
 							String[] ab = valu1.split(" ");
 							String busid = ab[0];
 							int b_left = Integer.parseInt(ab[1]) - 40;
+
 							int t = Time + 40;
 							port = "B";
-
-							intransit.add(port + " " + t + " " + busid + " " + b_left);
+						 
+								intransit.add(port + " " + t + " " + busid + " " + b_left);
+							
 
 						}
 
@@ -115,6 +131,7 @@ public class Working {
 							String[] ab1 = v.split(" ");
 							String busid = ab1[0];
 							int b_left1 = Integer.parseInt(ab1[1]) - 40;
+
 							int t = (int) Time + 40;
 							port = "B";
 
@@ -132,9 +149,9 @@ public class Working {
 							int b_left = Integer.parseInt(ab[1]) - 40;
 							int t = Time + 40;
 							port = "A";
-
-							intransit.add(port + " " + t + " " + id + " " + b_left);
-
+							 
+								intransit.add(port + " " + t + " " + id + " " + b_left);
+							
 						}
 
 						else {
@@ -208,7 +225,49 @@ public class Working {
 		System.out.println("The buses in transit: " + intransit);
 		System.out.println("The number of buses :" + total_bus);
 		System.out.println("The number of chargers: " + total_charger);
-		System.out.println("The price of chargers: $ "  +(total_charger*charger_price));
+		System.out.println("The price of chargers: $ " + (total_charger * charger_price));
+
+	}
+
+	static int k = 0;
+
+	private static void chargeingBuses(int time) {
+
+		if (!porta.empty()) {
+
+			for (int i = 0; i < porta.size(); i++) {
+				String a = porta.get(i);
+				String[] ab1 = a.split(" ");
+				String busid = ab1[0];
+				if (Integer.parseInt(ab1[1]) < bus_battery_capacity) {
+					int b_left1 = Integer.parseInt(ab1[1])+1;
+					porta.set(i, busid + " " + b_left1);
+				
+
+				}
+				 
+			}
+			System.out.println(porta);
+		}
+
+		if (!portb.empty()) {
+
+			for (int i = 0; i < portb.size(); i++) {
+				String a = portb.get(i);
+				String[] ab1 = a.split(" ");
+				String busid = ab1[0];
+				if (Integer.parseInt(ab1[1]) < bus_battery_capacity) {
+					int b_left1 = Integer.parseInt(ab1[1])+1;
+					porta.set(i, busid + " " + b_left1);
+					
+
+				}
+				 	}
+			System.out.println(portb);	 
+		}
+		 
+
+		// TODO Auto-generated method stub
 
 	}
 
