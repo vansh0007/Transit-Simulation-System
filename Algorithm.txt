@@ -1,8 +1,3 @@
-# Transit-Simulation-System
-Transit Simulation System
-
-
-
 Algortihm 1:
 
 1. Initialize  porta and portb with one bus containg bus_id and battery_capacity.
