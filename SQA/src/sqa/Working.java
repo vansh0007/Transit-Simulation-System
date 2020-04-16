@@ -8,10 +8,13 @@ public class Working {
 	static Stack<String> porta = new Stack<>();
 	static Stack<String> portb = new Stack<>();
 	static int bus_battery_capacity;
+	static ArrayList<String> intransit = new ArrayList<>();
+	static ArrayList<String> Schedule1 = new ArrayList<>();
 
 	public static void main(String[] args) throws IOException {
 		Scanner scan = new Scanner(System.in);
-
+//		HashMap<Integer, Integer> charger_schedule = new HashMap<>();
+		ArrayList<String> charger_schedule = new ArrayList<>();
 		HashMap<Integer, HashMap<String, Integer>> Bus_config = new HashMap<Integer, HashMap<String, Integer>>();
 		HashMap<String, Integer> battery_config = new HashMap<>();
 		HashMap<Integer, Integer> charger_config = new HashMap<>();
@@ -23,6 +26,24 @@ public class Working {
 		battery_config.put("battery1", 494);
 		battery_config.put("battery2", 594);
 		Bus_config.put(2, battery_config);
+		
+		
+		charger_schedule.add("60,80");
+		charger_schedule.add("180,220");
+		charger_schedule.add("500,560");
+		
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 		charger_config.put(1, 350);
 		charger_config.put(2, 450);
@@ -50,14 +71,24 @@ public class Working {
 		int A = 1;
 		int B = 1;
 		int Time = 0;
-		int limit = 10000;
-		boolean timetable = false;
-		boolean transit = false;
+		int limit = 1620;
 		int portB = 0;
 		int total_charger = 0;
 		int total_bus = 0;
+		
+		Schedule1.add("A"+" "+0);
+		Schedule1.add("B"+" "+1);
+		Schedule1.add("A"+" "+2);
+		Schedule1.add("B"+" "+4);
+		Schedule1.add("B"+" "+40);
+		Schedule1.add("B"+" "+50);
+		Schedule1.add("B"+" "+60);
+		Schedule1.add("B"+" "+100);
+		Schedule1.add("B"+" "+140);
+		Schedule1.add("A"+" "+190);
+		
 
-		ArrayList<String> Schedule1 = new ArrayList<>();
+		 
 		ArrayList<String> west = FileRead.getWest();
 		ArrayList<String> east = EastRead.getEast();
 		for (int i = 0; i < west.size(); i++) {
@@ -65,26 +96,15 @@ public class Working {
 
 		}
 
-		for (int i = 0; i < east.size(); i++) {
-			Schedule1.add(east.get(i));
+	for (int i = 0; i < east.size(); i++) {
+		Schedule1.add(east.get(i));
+	}
 
-		}
-
-		Schedule1.add("A 0");
-		Schedule1.add("A 0");
-		Schedule1.add("A 60");
-		Schedule1.add("A 70");
-		Schedule1.add("A 60");
-		Schedule1.add("B 80");
-		Schedule1.add("A 110");
-		Schedule1.add("A 110");
-//		Schedule1.add("A 120");
-//		Schedule1.add("A 120");
-//		Schedule1.add("A 125");
-//		Schedule1.add("A 130");
-//		Schedule1.add("B 135");
-
-		Stack<String> portb = new Stack<>();
+		
+   
+		 
+		 
+		 
 		Stack<String> buses = new Stack<>();
 		for (int i = 3; i < 1000; i++) {
 			buses.add("bus" + i + " " + bus_battery_capacity);
@@ -94,12 +114,23 @@ public class Working {
 		porta.add("bus1" + " " + bus_battery_capacity);
 		portb.add("bus2" + " " + bus_battery_capacity);
 
-		ArrayList<String> intransit = new ArrayList<>();
-		for (int i = 0; i < limit; i++) {
+	 
+		for (int i = 0; i < 1700; i++) {
 			Time = i;
+			
+			   
+			
+			 for (int it = 0; it < charger_schedule.size(); it++) {
+				 String [] charge= (charger_schedule.get(it).split(","));
+                 int start= Integer.parseInt(charge[0]);
+                 int finish = Integer.parseInt(charge[1]);
+                 if (Time>=start && Time<finish) {
+				chargeingBuses(Time);
 
-			chargeingBuses(Time);
-
+				
+			}
+			 }
+			 
 			for (int j = 0; j < Schedule1.size(); j++) {
 
 				String[] abc = Schedule1.get(j).split(" ");
@@ -111,15 +142,43 @@ public class Working {
 					if (port.equalsIgnoreCase("A")) {
 						PA: if (A != 0 && !porta.isEmpty()) {
 							A--;
-							String valu1 = porta.pop();
-							String[] ab = valu1.split(" ");
-							String busid = ab[0];
-							int b_left = Integer.parseInt(ab[1]) - 40;
+							
+							String[] peek= porta.peek().split(" ");
+							if((Integer.parseInt(peek[1]) - 40)>=40) {
+								
+								String valu1 = porta.pop();
+								String[] ab = valu1.split(" ");
+								String busid = ab[0];
+								int b_left = Integer.parseInt(ab[1]) - 40;
+								int t = Time + 40;
+								String	port3 = "B";
+								 
+										intransit.add(port3 + " " + t + " " + busid + " " + b_left);
+								
+							}
+							
+							else {
+								busCount++;
+							porta.add(buses.pop());
+							String v = porta.pop();
+							String[] ab1 = v.split(" ");
+							String busid = ab1[0];
+							int b_left1 = Integer.parseInt(ab1[1]) - 40;
 
-							int t = Time + 40;
-							port = "B";
-						 
-								intransit.add(port + " " + t + " " + busid + " " + b_left);
+							int t = (int) Time + 40;
+						String	port1 = "B";
+
+							intransit.add(port1 + " " + t + " " + busid + " " + b_left1);
+					
+							
+							
+							}	
+							
+							
+							 
+
+							 
+								 
 							
 
 						}
@@ -133,26 +192,66 @@ public class Working {
 							int b_left1 = Integer.parseInt(ab1[1]) - 40;
 
 							int t = (int) Time + 40;
-							port = "B";
+						String	port1 = "B";
 
-							intransit.add(port + " " + t + " " + busid + " " + b_left1);
+							intransit.add(port1 + " " + t + " " + busid + " " + b_left1);
 						}
 					}
-
-					if (port.equalsIgnoreCase("B")) {
+						
+					
+ 
+					  if (port.equalsIgnoreCase("B")) {
 						if (B != 0 && !portb.isEmpty()) {
 							B--;
+							
+							
+							
+							String[] peek= portb.peek().split(" ");
+							if((Integer.parseInt(peek[1]) - 40)>=40) {
+								
+								String valu1 = portb.pop();
+								String[] ab = valu1.split(" ");
+								String busid = ab[0];
+								int b_left = Integer.parseInt(ab[1]) - 40;
+								int t = Time + 40;
+								String	port3 = "A";
+								 
+										intransit.add(port3 + " " + t + " " + busid + " " + b_left);
+								
+							}
+							
+							else {
+								busCount++;
+							portb.add(buses.pop());
+							String v = portb.pop();
+							String[] ab1 = v.split(" ");
+							String busid = ab1[0];
+							int b_left1 = Integer.parseInt(ab1[1]) - 40;
 
-							String valu1 = portb.pop();
-							String[] ab = valu1.split(" ");
-							String id = ab[0];
-							int b_left = Integer.parseInt(ab[1]) - 40;
-							int t = Time + 40;
-							port = "A";
+							int t = (int) Time + 40;
+						String	port1 = "A";
+
+							intransit.add(port1 + " " + t + " " + busid + " " + b_left1);
+					
+							
+							
+							
+							}		
+							
 							 
-								intransit.add(port + " " + t + " " + id + " " + b_left);
+
+							 
+								 
+							
+
+							
+							
+						
+							
 							
 						}
+
+							 
 
 						else {
 							busCount++;
@@ -162,15 +261,17 @@ public class Working {
 							String id = ax[0];
 							int left1 = Integer.parseInt(ax[1]) - 40;
 							int t = Time + 40;
-							port = "A";
+					String 	port4 = "A";
 
-							intransit.add(port + " " + t + " " + id + " " + left1);
+							intransit.add(port4 + " " + t + " " + id + " " + left1);
 						}
 
 					}
 
+				
 				}
-			}
+				 }
+			
 
 			if (!intransit.isEmpty()) {
 
@@ -189,49 +290,61 @@ public class Working {
 
 							portb.add(id + " " + bleft);
 							intransit.remove(j1);
+							if (B > portB) {
+
+								portB = B;
+							}
 
 						}
 
-						if (B > portB) {
+						 
+					
 
-							portB = B;
-						}
-					}
-
-					if (port1.equalsIgnoreCase("A")) {
+					   if (port1.equalsIgnoreCase("A")) {
 
 						A++;
 						porta.add(id + " " + bleft);
 
 						intransit.remove(j1);
+						if (A > portA) {
+
+							portA = A;
+						}
 
 					}
-					if (A > portA) {
-
-						portA = A;
-					}
+					 
 				}
 
 				// add to A and b
-			}
+				}
+			
 
-			total_bus = busCount + 2;
-			total_charger = ((int) portA + (int) portB + 2);
-
+			 
 		}
-
+			}
+		
+		total_bus = busCount + 2;
+		total_charger = ((int) portA + (int) portB + 2);
+		 
+ 
 		System.out.println("The buses at port A: " + porta);
 		System.out.println("The buses at port b:" + portb);
 		System.out.println("The buses in transit: " + intransit);
 		System.out.println("The number of buses :" + total_bus);
 		System.out.println("The number of chargers: " + total_charger);
 		System.out.println("The price of chargers: $ " + (total_charger * charger_price));
-
-	}
+		 
+			
+		}
+	
 
 	static int k = 0;
+	
 
 	private static void chargeingBuses(int time) {
+		
+		k++;
+		 
 
 		if (!porta.empty()) {
 
@@ -242,12 +355,13 @@ public class Working {
 				if (Integer.parseInt(ab1[1]) < bus_battery_capacity) {
 					int b_left1 = Integer.parseInt(ab1[1])+1;
 					porta.set(i, busid + " " + b_left1);
+					
 				
 
 				}
 				 
 			}
-			System.out.println(porta);
+			 
 		}
 
 		if (!portb.empty()) {
@@ -258,12 +372,12 @@ public class Working {
 				String busid = ab1[0];
 				if (Integer.parseInt(ab1[1]) < bus_battery_capacity) {
 					int b_left1 = Integer.parseInt(ab1[1])+1;
-					porta.set(i, busid + " " + b_left1);
+					portb.set(i, busid + " " + b_left1);
 					
 
 				}
 				 	}
-			System.out.println(portb);	 
+			 
 		}
 		 
 
