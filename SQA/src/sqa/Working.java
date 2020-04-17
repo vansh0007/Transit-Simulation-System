@@ -2,22 +2,44 @@ package sqa;
 
 import java.io.IOException;
 import java.util.*;
+import sqa.Charger;
 
 public class Working {
 
 	static Stack<String> porta = new Stack<>();
 	static Stack<String> portb = new Stack<>();
 	static int bus_battery_capacity;
+    
 	static ArrayList<String> intransit = new ArrayList<>();
 	static ArrayList<String> Schedule1 = new ArrayList<>();
+    static HashMap<Integer, HashMap<String, Integer>> Bus_config = new HashMap<Integer, HashMap<String, Integer>>();
+    static ArrayList<String> charger_schedule = new ArrayList<>();
+	static HashMap<String, Integer> battery_config = new HashMap<>();
+	static HashMap<Integer, Integer> charger_config = new HashMap<>();
+    static ArrayList<Integer> ret = new ArrayList<>();
+    static ArrayList<String> west = new ArrayList<>();
+    static ArrayList<String> east = new ArrayList<>();
+    static int Bus_averge = 1;
+	static	int distance_cover = 40;
+        
+    static    int a = 10;
+	static	int busCount = 0;
+	static	int portA = 0;
+	static	int A = 1;
+	static	int B = 1;
+	static	int Time = 0;
+	static	int limit = 1620;
+	static	int portB = 0;
+	static	int total_charger = 0;
+	static	int total_bus = 0;
+    
 
 	public static void main(String[] args) throws IOException {
+        
 		Scanner scan = new Scanner(System.in);
+        
 //		HashMap<Integer, Integer> charger_schedule = new HashMap<>();
-		ArrayList<String> charger_schedule = new ArrayList<>();
-		HashMap<Integer, HashMap<String, Integer>> Bus_config = new HashMap<Integer, HashMap<String, Integer>>();
-		HashMap<String, Integer> battery_config = new HashMap<>();
-		HashMap<Integer, Integer> charger_config = new HashMap<>();
+		
 		battery_config.put("battery1", 294);
 		battery_config.put("battery2", 394);
 		Bus_config.put(1, battery_config);
@@ -31,66 +53,12 @@ public class Working {
 		charger_schedule.add("60,80");
 		charger_schedule.add("180,220");
 		charger_schedule.add("500,560");
-		
-		
-		 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		charger_config.put(1, 350);
+        
+        charger_config.put(1, 350);
 		charger_config.put(2, 450);
-
-		int Bus_averge = 1;
-		int distance_cover = 40;
-
-		System.out.println("Enter the bustype 1 or 2");
-		int bus_type = Integer.parseInt(scan.nextLine());
-
-		System.out.println("Enter the no battery type battery1 or battery2");
-		String battery_type = scan.nextLine();
-
-		System.out.println("Enter the charger with 350 as 1 and 450 as 2");
-		int charger_type = Integer.parseInt(scan.nextLine());
-		System.out.println("Enter the price of chargers:");
-		int charger_price = Integer.parseInt(scan.nextLine());
-
-		float charging_time = (float) Bus_config.get(bus_type).get(battery_type) / charger_config.get(charger_type);
-		bus_battery_capacity = Bus_config.get(bus_type).get(battery_type);
-		System.out.println("The selected battery capacity is : " + bus_battery_capacity);
-		int a = 10;
-		int busCount = 0;
-		int portA = 0;
-		int A = 1;
-		int B = 1;
-		int Time = 0;
-		int limit = 1620;
-		int portB = 0;
-		int total_charger = 0;
-		int total_bus = 0;
-		
-		Schedule1.add("A"+" "+0);
-		Schedule1.add("B"+" "+1);
-		Schedule1.add("A"+" "+2);
-		Schedule1.add("B"+" "+4);
-		Schedule1.add("B"+" "+40);
-		Schedule1.add("B"+" "+50);
-		Schedule1.add("B"+" "+60);
-		Schedule1.add("B"+" "+100);
-		Schedule1.add("B"+" "+140);
-		Schedule1.add("A"+" "+190);
-		
-
-		 
-		ArrayList<String> west = FileRead.getWest();
-		ArrayList<String> east = EastRead.getEast();
+        
+         west = FileRead.getWest();
+		 east = EastRead.getEast();
 		for (int i = 0; i < west.size(); i++) {
 			Schedule1.add(west.get(i));
 
@@ -99,12 +67,19 @@ public class Working {
 	for (int i = 0; i < east.size(); i++) {
 		Schedule1.add(east.get(i));
 	}
-
+    
+	 
 		
-   
+		
+			 
 		 
-		 
-		 
+		
+		Charger.userInterface();
+         
+	}
+
+public static ArrayList<Integer> Work(int bus_battery_capacity){
+		
 		Stack<String> buses = new Stack<>();
 		for (int i = 3; i < 1000; i++) {
 			buses.add("bus" + i + " " + bus_battery_capacity);
@@ -113,6 +88,31 @@ public class Working {
 
 		porta.add("bus1" + " " + bus_battery_capacity);
 		portb.add("bus2" + " " + bus_battery_capacity);
+		
+		
+		
+		
+		
+		
+
+		 
+
+		 
+		 
+		 
+		 
+		 
+		
+
+		 
+		 
+
+		
+   
+		 
+		 
+		 
+	 
 
 	 
 		for (int i = 0; i < 1700; i++) {
@@ -332,18 +332,25 @@ public class Working {
 		System.out.println("The buses in transit: " + intransit);
 		System.out.println("The number of buses :" + total_bus);
 		System.out.println("The number of chargers: " + total_charger);
-		System.out.println("The price of chargers: $ " + (total_charger * charger_price));
-		 
-			
+		System.out.println("The price of chargers: $ " + (total_charger * 10));
+		 ret.add(porta.size());
+         ret.add(portb.size());
+         ret.add(intransit.size());
+         ret.add( total_bus);
+         ret.add(total_charger);
+         
+         
+		return ret ;	
 		}
-	
 
-	static int k = 0;
+
+
+	
 	
 
 	private static void chargeingBuses(int time) {
 		
-		k++;
+		
 		 
 
 		if (!porta.empty()) {

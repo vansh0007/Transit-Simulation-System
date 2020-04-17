@@ -16,7 +16,7 @@ Algortihm 1:
 13.           		if Time = value:
 14.               	   if port is port B:
 15.                   		charger_count++
-16.                   		add vale in portb 
+16.                   		add value in portb 
 17.                   		remove value from intransit
               
 18.               	   else:

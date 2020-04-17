@@ -1,6 +1,6 @@
 Schedule East: 
 Hrs             Minutes:
-04-             0
+04-             35
 05 -            25,57
 06 -            28
 07 -            1,33
