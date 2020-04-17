@@ -5,6 +5,7 @@
  */
 package sqa;
 
+import java.awt.event.ActionEvent;
 import java.util.*;
 import javax.swing.JFrame;
 
@@ -17,6 +18,8 @@ public class Charger extends javax.swing.JFrame {
 	public HashMap<String, HashMap<String, Integer>> ModelName;
 	public HashMap<String, Integer> xyz;
 	public HashMap<String, Integer> middle;
+     static int bus_selection;
+     static String value;
 
 	/**
 	 * Creates new form Charger
@@ -27,21 +30,8 @@ public class Charger extends javax.swing.JFrame {
 
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-		ModelName = new HashMap<>();
-		xyz = new HashMap<>();
-		xyz.put("Heliox_450_kv", 4000);
-		xyz.put("heliox_550_kv", 6000);
-
-		ModelName.put("company 1", xyz);
-		xyz = new HashMap<>();
-		xyz.put("item_2_450_kv", 4500);
-		xyz.put("item_2_550_kv", 7000);
-		ModelName.put("company 2", xyz);
-
-		xyz = new HashMap<>();
-		xyz.put("item_3_450_kv", 3000);
-		xyz.put("item_3_550_kv", 7500);
-		ModelName.put("company 3", xyz);
+	 
+		 
 
 	}
 
@@ -60,20 +50,27 @@ public class Charger extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         Manufacturer = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        Model = new javax.swing.JComboBox<>();
+        battery_selector = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Bus_table = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        Manufacturer1 = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        Model1 = new javax.swing.JComboBox<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        table = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         Predict = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        charger = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        Total_buses = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        portW = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        portE = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        Total_charger = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        Total_price = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        intransit = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        chrgr_price = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -88,7 +85,7 @@ public class Charger extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Manufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Company 1", "Company 2 ", "Company 3\t", "Company 4" }));
+        Manufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bus 1", "Bus 2", " " }));
         Manufacturer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ManufacturerActionPerformed(evt);
@@ -97,66 +94,17 @@ public class Charger extends javax.swing.JFrame {
 
         jLabel1.setText("Manufacturer");
 
-        Model.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Model.addActionListener(new java.awt.event.ActionListener() {
+        battery_selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        battery_selector.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModelActionPerformed(evt);
+                battery_selectorActionPerformed(evt);
             }
         });
 
         jLabel2.setText("Model");
 
-        Bus_table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Item", "Charger", "Prices"
-            }
-        ));
-        Bus_table.setColumnSelectionAllowed(true);
-        jScrollPane1.setViewportView(Bus_table);
-        Bus_table.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-
         jLabel3.setBackground(new java.awt.Color(204, 255, 204));
         jLabel3.setText("CHARGER SELECTION :");
-
-        jLabel4.setText("BATTERY SELECTION  (BUS) :");
-
-        jLabel5.setText("Manufacturer");
-
-        Manufacturer1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Company 1", "Company 2 ", "Company 3\t", "Company 4" }));
-        Manufacturer1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Manufacturer1ActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("Model");
-
-        Model1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Model1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Model1ActionPerformed(evt);
-            }
-        });
-
-        table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Item", "Charger", "Prices"
-            }
-        ));
-        jScrollPane2.setViewportView(table);
-        table.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         jButton1.setText("Next");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -172,6 +120,43 @@ public class Charger extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("Charger");
+
+        charger.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "350", "450" }));
+
+        jLabel4.setText("Total Buses:");
+
+        Total_buses.setText("0");
+
+        jLabel6.setText("Buses in Port West:");
+
+        portW.setText("0");
+
+        jLabel9.setText("Buses in Port East:");
+
+        portE.setText("0");
+
+        jLabel11.setText("Total Charger:");
+
+        Total_charger.setText("0");
+
+        jLabel13.setText("Total Price in CAD:");
+
+        Total_price.setText("0");
+
+        jLabel5.setText("Buses in Transit:");
+
+        intransit.setText("0");
+
+        jLabel8.setText("Charger Price");
+
+        chrgr_price.setText("0");
+        chrgr_price.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chrgr_priceActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -179,37 +164,49 @@ public class Charger extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
+                        .addGap(51, 51, 51)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Manufacturer, 0, 120, Short.MAX_VALUE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(charger, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Manufacturer, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(41, 41, 41)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel2)
-                                            .addComponent(Model, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Manufacturer1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(64, 64, 64)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Model1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6)))
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(battery_selector, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(80, 80, 80)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(chrgr_price, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(209, 209, 209)
                         .addComponent(Predict)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1)))
-                .addContainerGap(198, Short.MAX_VALUE))
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Total_buses, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1)
+                            .addComponent(portW, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(portE, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(intransit, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Total_charger, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(122, 122, 122))
+                    .addComponent(Total_price, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,23 +219,39 @@ public class Charger extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Model, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(battery_selector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Manufacturer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(61, 61, 61)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(charger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chrgr_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Total_buses)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(portW)
+                    .addComponent(Total_price))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(portE))
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(intransit))
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Model1)
-                    .addComponent(Manufacturer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                    .addComponent(jLabel11)
+                    .addComponent(Total_charger))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Predict)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -248,24 +261,43 @@ public class Charger extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void chrgr_priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chrgr_priceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chrgr_priceActionPerformed
+
 	private void ManufacturerActionPerformed(java.awt.event.ActionEvent evt) {
 
-		String value = Manufacturer.getSelectedItem().toString();
-		middle = ModelName.get(value);
-		for (String it : middle.keySet()) {
-
-			Model.addItem(it + " " + middle.get(it));
-
-		}
+		String[] value = Manufacturer.getSelectedItem().toString().split(" ");
+        bus_selection= Integer.parseInt(value[1]);
+        battery_selector.setEnabled(true);
+//        if(Model.getItemCount()!=0){
+//         Model.removeAllItems();
+//                 }
+    
+        HashMap<String, Integer> battery_val= Working.Bus_config.get(bus_selection);
+         
+        for (Integer it: battery_val.values()){
+           battery_selector.addItem(it+"");
+            
+        }
+        
+        
+        
+        
+        
+        
+		 
 
 		// TODO add your handling code here:
 	}// GEN-LAST:event_ManufacturerActionPerformed
 
-	private void ModelActionPerformed(java.awt.event.ActionEvent evt) {
+	 public   void battery_selectorActionPerformed(java.awt.event.ActionEvent evt) {
 
-		String[] value = Model.getSelectedItem().toString().split(" ");
+		 value = battery_selector.getSelectedItem().toString();
+         
+       
 
-		String item = "item 1";
+		
 
 //		table.setValueAt((Object) item, 0, 0);
 //		table.setValueAt((Object) value[0], 0, 1);
@@ -283,6 +315,17 @@ public class Charger extends javax.swing.JFrame {
 	}// GEN-LAST:event_Model1ActionPerformed
 
 	private void PredictActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_PredictActionPerformed
+        
+        Working.bus_battery_capacity=  Integer.parseInt(battery_selector.getSelectedItem().toString());
+     ArrayList<Integer> abc=   Working.Work(Working.bus_battery_capacity);
+     Total_buses.setText(abc.get(3)+"");
+     portW.setText(abc.get(0)+"");
+     portE.setText(abc.get(1)+"");
+     Total_charger.setText(abc.get(4)+"");
+      
+     Total_price.setText((abc.get(4)*Integer.parseInt(chrgr_price.getText().toString()))+"");
+     intransit.setText(abc.get(2)+"");
+        
 		// TODO add your handling code here:
 	}// GEN-LAST:event_PredictActionPerformed
 
@@ -300,7 +343,7 @@ public class Charger extends javax.swing.JFrame {
 	/**
 	 * @param args the command line arguments
 	 */
-	public static void main(String args[]) {
+	public static void userInterface() {
 		/* Set the Nimbus look and feel */
 		// <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
 		// (optional) ">
@@ -337,24 +380,31 @@ public class Charger extends javax.swing.JFrame {
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Bus_table;
     private javax.swing.JComboBox<String> Manufacturer;
-    private javax.swing.JComboBox<String> Manufacturer1;
-    private javax.swing.JComboBox<String> Model;
-    private javax.swing.JComboBox<String> Model1;
     private javax.swing.JButton Predict;
+    private javax.swing.JLabel Total_buses;
+    private javax.swing.JLabel Total_charger;
+    private javax.swing.JLabel Total_price;
+    private javax.swing.JComboBox<String> battery_selector;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JComboBox<String> charger;
+    private javax.swing.JTextField chrgr_price;
+    private javax.swing.JLabel intransit;
     private javax.swing.JButton jButton1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable table;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel portE;
+    private javax.swing.JLabel portW;
     // End of variables declaration//GEN-END:variables
 }
