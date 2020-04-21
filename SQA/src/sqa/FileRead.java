@@ -12,12 +12,10 @@ public class FileRead {
 	public static ArrayList<String> getWest() throws IOException {
 		 ArrayList<String> timeline1 = new ArrayList();
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
+ 
 		FileInputStream fis = new FileInputStream("C:/Users/vansh/Desktop/New folder (11)/SQ1.txt");
-=======
-		FileInputStream fis = new FileInputStream("SQA/ScheduleData/SQ1.txt");
->>>>>>> ac9169526af70ca0b0e439af01538887527194ce
-		Scanner sc = new Scanner(fis);
+ 
+		 		Scanner sc = new Scanner(fis);
 		int count = 0;
 		sc.nextLine();
 		sc.nextLine();
