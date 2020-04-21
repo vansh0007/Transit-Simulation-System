@@ -471,13 +471,14 @@ public class Charger extends javax.swing.JFrame {
         if (value.equalsIgnoreCase("HELIOX")) {
         charger1_capacity.removeAllItems();
         charger1_capacity.addItem("50");
+        charger1_capacity.addItem("450");
         charger2_capacity.removeAllItems();
+        charger2_capacity.addItem("50");
         charger2_capacity.addItem("450");
         
-        charger1_capacity.setSelectedIndex(0);
-         charger2_capacity.setSelectedIndex(0);
-         charger1_capacity.setEnabled(false);
-         charger2_capacity.setEnabled(false);
+       
+         
+          
          charger2_manufaturer.setSelectedIndex(0);
          charger2_manufaturer.setEnabled(false);
          
@@ -486,15 +487,17 @@ public class Charger extends javax.swing.JFrame {
         
         else if (value.equalsIgnoreCase("ABB")){
            
-            charger1_capacity.removeAllItems();
+        	charger1_capacity.removeAllItems();
             charger1_capacity.addItem("100");
+            charger1_capacity.addItem("300");
             charger2_capacity.removeAllItems();
+            charger2_capacity.addItem("100");
             charger2_capacity.addItem("300");
             
-            charger1_capacity.setSelectedIndex(0);
-             charger2_capacity.setSelectedIndex(0);
-             charger1_capacity.setEnabled(false);
-             charger2_capacity.setEnabled(false);
+           
+             
+              
+            
              charger2_manufaturer.setSelectedIndex(1);
              charger2_manufaturer.setEnabled(false);
         

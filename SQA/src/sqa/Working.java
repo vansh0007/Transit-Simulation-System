@@ -34,6 +34,8 @@ public class Working {
 	static int fast_charger;
 	static int slow_charger;
 	static Stack<String> buses;
+	
+	static int  fast_battery;
 
 	Working() throws IOException {
 		porta = new Stack<>();
@@ -99,7 +101,25 @@ public class Working {
 	}
 
 	public ArrayList<Integer> Work(int bus_battery_capacity) {
-		System.out.println(Schedule1);
+		int pass1 =Integer.parseInt(Charger.charger1_capacity.getSelectedItem().toString());
+		int pass2= Integer.parseInt(Charger.charger2_capacity.getSelectedItem().toString());
+		 
+		if ( pass1<pass2) {
+			fast_battery=pass1;
+			
+		}
+		
+		else if (pass1>pass2) {
+			
+			fast_battery= pass2;
+			
+		}
+		
+		
+		else   {
+			
+			fast_battery= pass2;
+		}
 		total_bus = 0;
 		Time = 0;
 
@@ -316,10 +336,12 @@ public class Working {
 	}
 
 	private static void fastCharging(String p, int time) {
+		 
 		time_value.add(time);
 		fast_charger++;
 		if (p.equalsIgnoreCase("A")) {
-			System.out.println(porta.peek());
+
+
 			fast_charging.add(porta.pop() + " A");
 			if (!porta.isEmpty()) {
 
@@ -336,7 +358,8 @@ public class Working {
 		}
 
 		if (p.equalsIgnoreCase("B")) {
-			System.out.println(portb.peek());
+
+
 			fast_charging.add(portb.pop() + " B");
 			if (!portb.isEmpty()) {
 
@@ -354,18 +377,21 @@ public class Working {
 		}
 
 		if (!fast_charging.isEmpty()) {
+			 
+
 
 			for (int i = 0; i < fast_charging.size(); i++) {
 				String[] right = fast_charging.get(i).split(" ");
 				fast_charging.remove(i);
+				 
 				if (right[2].equalsIgnoreCase("A")) {
 
-					porta.add(right[0] + " " + (Integer.parseInt(right[1]) * 0 + bus_battery_capacity - 150));
+					porta.add(right[0] + " " + (Integer.parseInt(right[1]) * 0 + (bus_battery_capacity/fast_battery)*30));
 				}
 
 				else if (right[2].equalsIgnoreCase("B")) {
 
-					portb.add(right[0] + " " + (Integer.parseInt(right[1]) * 0 + bus_battery_capacity - 150));
+					portb.add(right[0] + " " + (Integer.parseInt(right[1]) * 0 + (bus_battery_capacity/fast_battery)*30));
 				}
 
 			}
