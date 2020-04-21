@@ -472,7 +472,7 @@ public class Charger extends javax.swing.JFrame {
         charger1_capacity.removeAllItems();
         charger1_capacity.addItem("50");
         charger2_capacity.removeAllItems();
-        charger2_capacity.addItem("100");
+        charger2_capacity.addItem("450");
         
         charger1_capacity.setSelectedIndex(0);
          charger2_capacity.setSelectedIndex(0);
@@ -637,12 +637,25 @@ userInterface();
      
     public ArrayList<String> set_Value(ArrayList<String> a){
         for (String str: a){
-            String[] abc = str.split(",");
-            int a1 = Integer.parseInt(abc[0])/60 ;
-            int a2 = Integer.parseInt(abc[0]) %60;
-            int b1= Integer.parseInt(abc[1])/60;
-            int b2 = Integer.parseInt(abc[1])%60;
-            slow_transit.add(a1+":"+ a2+" -" +b1+":"+b2+"\r\n");
+        int   	minute =Integer.parseInt(str.split(",")[0]);
+        	 int hour = minute / 60;
+			    minute %= 60;
+			    String p = "AM";
+			    if (hour >= 12) {
+			        hour %= 12;
+			        p = "PM";
+			    }
+			    if (hour == 0) {
+			        hour = 12;
+			    }
+			    String abc= (hour < 10 ? "0" + hour : hour) + ":" + (minute < 10 ? "0" + minute : minute) + " " + p;
+			
+//            String[] abc = str.split(",");
+//            int a1 = Integer.parseInt(abc[0])/60 ;
+//            int a2 = Integer.parseInt(abc[0]) %60;
+//            int b1= Integer.parseInt(abc[1])/60;
+//            int b2 = Integer.parseInt(abc[1])%60;
+            slow_transit.add(abc+"\r\n");
             
             
             
@@ -701,13 +714,32 @@ userInterface();
 	
 	public static ArrayList<String> fastText(ArrayList<Integer> a) {
 		ArrayList<String> fast_list = new ArrayList<>();
-		 for (Integer it: a){
+		 for (Integer minute: a){
 	            
-	            int a1 = it/60 ;
-	            int a2 = it %60;
-	            int b1= (it)/60;
-	            int b2 = a2+15;
-	            fast_list.add(a1+":"+ a2+" -" +b1+":"+b2+"\r\n");
+			 int hour = minute / 60;
+			    minute %= 60;
+			    String p = "AM";
+			    if (hour >= 12) {
+			        hour %= 12;
+			        p = "PM";
+			    }
+			    if (hour == 0) {
+			        hour = 12;
+			    }
+			    String abc= (hour < 10 ? "0" + hour : hour) + ":" + (minute < 10 ? "0" + minute : minute) + " " + p;
+			
+			 
+			 
+//	            int a1 = it/60 ;
+//	            int a2 = it %60;
+//	            if (a2>60 ) {
+//	            	a1++;
+//	            	a2
+//	            }
+//	            
+//	            int b1= (it)/60;
+//	            int b2 = a2+15;
+	            fast_list.add(abc+"\r\n");
 		
 		
 	}

@@ -12,7 +12,7 @@ public class EastRead {
 		public static ArrayList<String> getEast() throws IOException {
 			 ArrayList<String> timeline2 = new ArrayList();
 			// TODO Auto-generated method stub
-			FileInputStream fis = new FileInputStream("/ SQA/ScheduleData/SQ2.txt");
+			FileInputStream fis = new FileInputStream("C:/Users/vansh/Desktop/New folder (11)/SQ2.txt");
 			Scanner sc = new Scanner(fis);
 			int count = 0;
 			sc.nextLine();
