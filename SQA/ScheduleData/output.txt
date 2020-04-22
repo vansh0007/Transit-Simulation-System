@@ -1,0 +1,220 @@
+Arrival port :    MacDonald     | bus-2 |   04:35 AM       - 05:15 AM | Destination Port   Lionel-Groulx  |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | bus-1 |   05:00 AM       - 05:40 AM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :    MacDonald     | Bus-3 |   05:25 AM       - 06:05 AM | Destination Port   Lionel-Groulx  |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | bus-2 |   05:40 AM       - 06:20 AM | Destination Port    MacDonald     |   battery Remaining  314 | 
+
+Arrival port :    MacDonald     | bus-1 |   05:57 AM       - 06:37 AM | Destination Port   Lionel-Groulx  |   battery Remaining  314 | 
+
+Arrival port :   Lionel-Groulx  | Bus-4 |   06:00 AM       - 06:40 AM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-3 |   06:22 AM       - 07:02 AM | Destination Port    MacDonald     |   battery Remaining  314 | 
+
+Arrival port :    MacDonald     | bus-2 |   06:28 AM       - 07:08 AM | Destination Port   Lionel-Groulx  |   battery Remaining  274 | 
+
+Arrival port :   Lionel-Groulx  | bus-1 |   06:47 AM       - 07:27 AM | Destination Port    MacDonald     |   battery Remaining  274 | 
+
+Arrival port :    MacDonald     | Bus-4 |   07:01 AM       - 07:41 AM | Destination Port   Lionel-Groulx  |   battery Remaining  314 | 
+
+Arrival port :   Lionel-Groulx  | bus-2 |   07:17 AM       - 07:57 AM | Destination Port    MacDonald     |   battery Remaining  234 | 
+
+Arrival port :    MacDonald     | bus-1 |   07:33 AM       - 08:13 AM | Destination Port   Lionel-Groulx  |   battery Remaining  234 | 
+
+Arrival port :    MacDonald     | bus-2 |   08:05 AM       - 08:45 AM | Destination Port   Lionel-Groulx  |   battery Remaining  194 | 
+
+Arrival port :   Lionel-Groulx  | bus-1 |   08:15 AM       - 08:55 AM | Destination Port    MacDonald     |   battery Remaining  194 | 
+
+Arrival port :    MacDonald     | Bus-3 |   08:35 AM       - 09:15 AM | Destination Port   Lionel-Groulx  |   battery Remaining  274 | 
+
+Arrival port :   Lionel-Groulx  | Bus-4 |   08:44 AM       - 09:24 AM | Destination Port    MacDonald     |   battery Remaining  274 | 
+
+Arrival port :    MacDonald     | bus-1 |   09:06 AM       - 09:46 AM | Destination Port   Lionel-Groulx  |   battery Remaining  154 | 
+
+Arrival port :   Lionel-Groulx  | bus-2 |   09:15 AM       - 09:55 AM | Destination Port    MacDonald     |   battery Remaining  154 | 
+
+Arrival port :   Lionel-Groulx  | Bus-3 |   09:46 AM       - 10:26 AM | Destination Port    MacDonald     |   battery Remaining  234 | 
+
+Arrival port :    MacDonald     | bus-2 |   09:58 AM       - 10:38 AM | Destination Port   Lionel-Groulx  |   battery Remaining  114 | 
+
+Arrival port :   Lionel-Groulx  | bus-1 |   10:17 AM       - 10:57 AM | Destination Port    MacDonald     |   battery Remaining  114 | 
+
+Arrival port :    MacDonald     | Bus-4 |   10:21 AM       - 11:01 AM | Destination Port   Lionel-Groulx  |   battery Remaining  234 | 
+
+Arrival port :    MacDonald     | Bus-3 |   10:44 AM       - 11:24 AM | Destination Port   Lionel-Groulx  |   battery Remaining  194 | 
+
+Arrival port :   Lionel-Groulx  | bus-2 |   10:48 AM       - 11:28 AM | Destination Port    MacDonald     |   battery Remaining  74 | 
+
+Arrival port :    MacDonald     | bus-1 |   11:08 AM       - 11:48 AM | Destination Port   Lionel-Groulx  |   battery Remaining  74 | 
+
+Arrival port :   Lionel-Groulx  | Bus-4 |   11:18 AM       - 11:58 AM | Destination Port    MacDonald     |   battery Remaining  194 | 
+
+Arrival port :    MacDonald     | bus-2 |   11:31 AM       - 11:46 AM | Destination Port    MacDonald     |   battery Remaining  74 |  ChargingTime  11:31 AM    11:46 AM | ABB-300KW  |   After Charging 149 | 
+
+Arrival port :   Lionel-Groulx  | Bus-3 |   11:49 AM       - 12:29 PM | Destination Port    MacDonald     |   battery Remaining  154 | 
+
+Arrival port :   Lionel-Groulx  | bus-1 |   11:49 AM       - 12:04 PM | Destination Port   Lionel-Groulx  |   battery Remaining  74 |  ChargingTime  11:49 AM    12:04 PM | ABB-300KW  |   After Charging 149 | 
+
+Arrival port :    MacDonald     | Bus-5 |   11:54 AM       - 12:34 PM | Destination Port   Lionel-Groulx  |   battery Remaining  354 | 
+
+Arrival port :    MacDonald     | Bus-4 |   12:16 PM       - 12:56 PM | Destination Port   Lionel-Groulx  |   battery Remaining  154 | 
+
+Arrival port :   Lionel-Groulx  | bus-1 |   12:18 PM       - 12:58 PM | Destination Port    MacDonald     |   battery Remaining  109 | 
+
+Arrival port :    MacDonald     | Bus-3 |   12:37 PM       - 01:17 PM | Destination Port   Lionel-Groulx  |   battery Remaining  114 | 
+
+Arrival port :   Lionel-Groulx  | Bus-5 |   12:47 PM       - 01:27 PM | Destination Port    MacDonald     |   battery Remaining  314 | 
+
+Arrival port :    MacDonald     | Bus-6 |   12:58 PM       - 01:38 PM | Destination Port   Lionel-Groulx  |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-4 |   01:15 PM       - 01:55 PM | Destination Port    MacDonald     |   battery Remaining  114 | 
+
+Arrival port :    MacDonald     | bus-1 |   01:20 PM       - 02:00 PM | Destination Port   Lionel-Groulx  |   battery Remaining  69 | 
+
+Arrival port :   Lionel-Groulx  | Bus-6 |   01:43 PM       - 02:23 PM | Destination Port    MacDonald     |   battery Remaining  314 | 
+
+Arrival port :    MacDonald     | Bus-5 |   01:46 PM       - 02:26 PM | Destination Port   Lionel-Groulx  |   battery Remaining  274 | 
+
+Arrival port :   Lionel-Groulx  | Bus-3 |   02:11 PM       - 02:51 PM | Destination Port    MacDonald     |   battery Remaining  74 | 
+
+Arrival port :   Lionel-Groulx  | bus-1 |   02:11 PM       - 02:26 PM | Destination Port   Lionel-Groulx  |   battery Remaining  69 |  ChargingTime  02:11 PM    02:26 PM | ABB-300KW  |   After Charging 144 | 
+
+Arrival port :    MacDonald     | Bus-4 |   02:13 PM       - 02:53 PM | Destination Port   Lionel-Groulx  |   battery Remaining  74 | 
+
+Arrival port :   Lionel-Groulx  | Bus-5 |   02:39 PM       - 03:19 PM | Destination Port    MacDonald     |   battery Remaining  234 | 
+
+Arrival port :    MacDonald     | Bus-6 |   02:40 PM       - 03:20 PM | Destination Port   Lionel-Groulx  |   battery Remaining  274 | 
+
+Arrival port :   Lionel-Groulx  | bus-1 |   03:08 PM       - 03:48 PM | Destination Port    MacDonald     |   battery Remaining  104 | 
+
+Arrival port :   Lionel-Groulx  | Bus-4 |   03:08 PM       - 03:23 PM | Destination Port   Lionel-Groulx  |   battery Remaining  74 |  ChargingTime  03:08 PM    03:23 PM | ABB-300KW  |   After Charging 149 | 
+
+Arrival port :    MacDonald     | bus-2 |   03:09 PM       - 03:49 PM | Destination Port   Lionel-Groulx  |   battery Remaining  109 | 
+
+Arrival port :    MacDonald     | Bus-3 |   03:09 PM       - 03:24 PM | Destination Port    MacDonald     |   battery Remaining  74 |  ChargingTime  03:09 PM    03:24 PM | ABB-300KW  |   After Charging 149 | 
+
+Arrival port :   Lionel-Groulx  | Bus-6 |   03:37 PM       - 04:17 PM | Destination Port    MacDonald     |   battery Remaining  234 | 
+
+Arrival port :    MacDonald     | Bus-5 |   03:38 PM       - 04:18 PM | Destination Port   Lionel-Groulx  |   battery Remaining  194 | 
+
+Arrival port :   Lionel-Groulx  | bus-2 |   04:06 PM       - 04:46 PM | Destination Port    MacDonald     |   battery Remaining  69 | 
+
+Arrival port :    MacDonald     | bus-1 |   04:07 PM       - 04:47 PM | Destination Port   Lionel-Groulx  |   battery Remaining  64 | 
+
+Arrival port :   Lionel-Groulx  | Bus-5 |   04:35 PM       - 05:15 PM | Destination Port    MacDonald     |   battery Remaining  154 | 
+
+Arrival port :    MacDonald     | Bus-6 |   04:37 PM       - 05:17 PM | Destination Port   Lionel-Groulx  |   battery Remaining  194 | 
+
+Arrival port :   Lionel-Groulx  | bus-1 |   05:05 PM       - 05:45 PM | Destination Port    MacDonald     |   battery Remaining  42 | 
+
+Arrival port :    MacDonald     | bus-2 |   05:07 PM       - 05:47 PM | Destination Port   Lionel-Groulx  |   battery Remaining  50 | 
+
+Arrival port :   Lionel-Groulx  | Bus-6 |   05:32 PM       - 06:12 PM | Destination Port    MacDonald     |   battery Remaining  169 | 
+
+Arrival port :    MacDonald     | Bus-5 |   05:37 PM       - 06:17 PM | Destination Port   Lionel-Groulx  |   battery Remaining  136 | 
+
+Arrival port :   Lionel-Groulx  | Bus-4 |   06:01 PM       - 06:41 PM | Destination Port    MacDonald     |   battery Remaining  169 | 
+
+Arrival port :   Lionel-Groulx  | bus-2 |   06:01 PM       - 06:16 PM | Destination Port   Lionel-Groulx  |   battery Remaining  50 |  ChargingTime  06:01 PM    06:16 PM | ABB-300KW  |   After Charging 125 | 
+
+Arrival port :    MacDonald     | Bus-3 |   06:07 PM       - 06:47 PM | Destination Port   Lionel-Groulx  |   battery Remaining  169 | 
+
+Arrival port :    MacDonald     | bus-1 |   06:07 PM       - 06:22 PM | Destination Port    MacDonald     |   battery Remaining  42 |  ChargingTime  06:07 PM    06:22 PM | ABB-300KW  |   After Charging 117 | 
+
+Arrival port :   Lionel-Groulx  | Bus-5 |   06:27 PM       - 07:07 PM | Destination Port    MacDonald     |   battery Remaining  96 | 
+
+Arrival port :    MacDonald     | Bus-6 |   06:38 PM       - 07:18 PM | Destination Port   Lionel-Groulx  |   battery Remaining  129 | 
+
+Arrival port :   Lionel-Groulx  | Bus-3 |   06:53 PM       - 07:33 PM | Destination Port    MacDonald     |   battery Remaining  135 | 
+
+Arrival port :    MacDonald     | Bus-5 |   07:09 PM       - 07:49 PM | Destination Port   Lionel-Groulx  |   battery Remaining  58 | 
+
+Arrival port :   Lionel-Groulx  | bus-2 |   07:15 PM       - 07:55 PM | Destination Port    MacDonald     |   battery Remaining  121 | 
+
+Arrival port :   Lionel-Groulx  | Bus-6 |   07:29 PM       - 08:09 PM | Destination Port    MacDonald     |   battery Remaining  100 | 
+
+Arrival port :   Lionel-Groulx  | Bus-7 |   07:37 PM       - 08:17 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :    MacDonald     | Bus-3 |   07:40 PM       - 08:20 PM | Destination Port   Lionel-Groulx  |   battery Remaining  101 | 
+
+Arrival port :   Lionel-Groulx  | Bus-8 |   07:45 PM       - 08:25 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-5 |   07:53 PM       - 08:08 PM | Destination Port   Lionel-Groulx  |   battery Remaining  58 |  ChargingTime  07:53 PM    08:08 PM | ABB-300KW  |   After Charging 133 | 
+
+Arrival port :   Lionel-Groulx  | Bus-9 |   08:01 PM       - 08:41 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-10 |   08:09 PM       - 08:49 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :    MacDonald     | Bus-6 |   08:11 PM       - 08:51 PM | Destination Port   Lionel-Groulx  |   battery Remaining  60 | 
+
+Arrival port :   Lionel-Groulx  | Bus-11 |   08:17 PM       - 08:57 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-3 |   08:25 PM       - 09:05 PM | Destination Port    MacDonald     |   battery Remaining  61 | 
+
+Arrival port :   Lionel-Groulx  | Bus-12 |   08:33 PM       - 09:13 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-13 |   08:41 PM       - 09:21 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :    MacDonald     | Bus-9 |   08:42 PM       - 09:22 PM | Destination Port   Lionel-Groulx  |   battery Remaining  315 | 
+
+Arrival port :   Lionel-Groulx  | Bus-14 |   08:49 PM       - 09:29 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-5 |   08:58 PM       - 09:38 PM | Destination Port    MacDonald     |   battery Remaining  112 | 
+
+Arrival port :   Lionel-Groulx  | Bus-6 |   08:58 PM       - 09:13 PM | Destination Port   Lionel-Groulx  |   battery Remaining  67 |  ChargingTime  08:58 PM    09:13 PM | ABB-300KW  |   After Charging 142 | 
+
+Arrival port :   Lionel-Groulx  | Bus-15 |   09:07 PM       - 09:47 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :    MacDonald     | Bus-11 |   09:12 PM       - 09:52 PM | Destination Port   Lionel-Groulx  |   battery Remaining  329 | 
+
+Arrival port :    MacDonald     | Bus-3 |   09:12 PM       - 09:27 PM | Destination Port    MacDonald     |   battery Remaining  68 |  ChargingTime  09:12 PM    09:27 PM | ABB-300KW  |   After Charging 143 | 
+
+Arrival port :   Lionel-Groulx  | Bus-16 |   09:16 PM       - 09:56 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-9 |   09:25 PM       - 10:05 PM | Destination Port    MacDonald     |   battery Remaining  278 | 
+
+Arrival port :   Lionel-Groulx  | Bus-17 |   09:33 PM       - 10:13 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-18 |   09:42 PM       - 10:22 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :    MacDonald     | Bus-5 |   09:42 PM       - 10:22 PM | Destination Port   Lionel-Groulx  |   battery Remaining  73 | 
+
+Arrival port :   Lionel-Groulx  | Bus-19 |   09:51 PM       - 10:31 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-11 |   10:00 PM       - 10:40 PM | Destination Port    MacDonald     |   battery Remaining  289 | 
+
+Arrival port :   Lionel-Groulx  | Bus-20 |   10:09 PM       - 10:49 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :    MacDonald     | Bus-9 |   10:12 PM       - 10:52 PM | Destination Port   Lionel-Groulx  |   battery Remaining  238 | 
+
+Arrival port :   Lionel-Groulx  | Bus-21 |   10:19 PM       - 10:59 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-22 |   10:30 PM       - 11:10 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-23 |   10:42 PM       - 11:22 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :    MacDonald     | Bus-11 |   10:42 PM       - 11:22 PM | Destination Port   Lionel-Groulx  |   battery Remaining  251 | 
+
+Arrival port :   Lionel-Groulx  | Bus-9 |   10:56 PM       - 11:36 PM | Destination Port    MacDonald     |   battery Remaining  202 | 
+
+Arrival port :    MacDonald     | Bus-22 |   11:11 PM       - 11:51 PM | Destination Port   Lionel-Groulx  |   battery Remaining  315 | 
+
+Arrival port :   Lionel-Groulx  | Bus-24 |   11:13 PM       - 11:53 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :   Lionel-Groulx  | Bus-25 |   11:35 PM       - 12:15 PM | Destination Port    MacDonald     |   battery Remaining  354 | 
+
+Arrival port :    MacDonald     | Bus-9 |   11:40 PM       - 12:20 PM | Destination Port   Lionel-Groulx  |   battery Remaining  165 | 
+
+Arrival port :   Lionel-Groulx  | Bus-22 |   11:59 PM       - 12:39 PM | Destination Port    MacDonald     |   battery Remaining  275 | 
+
+Arrival port :    MacDonald     | Bus-24 |   12:03 PM       - 12:43 PM | Destination Port   Lionel-Groulx  |   battery Remaining  314 | 
+
+Arrival port :    MacDonald     | Bus-25 |   12:20 PM       - 01:00 PM | Destination Port   Lionel-Groulx  |   battery Remaining  314 | 
+
+Arrival port :   Lionel-Groulx  | Bus-9 |   12:25 PM       - 01:05 PM | Destination Port    MacDonald     |   battery Remaining  125 | 
+
+Arrival port :   Lionel-Groulx  | Bus-24 |   12:53 PM       - 01:33 PM | Destination Port    MacDonald     |   battery Remaining  274 | 
+
+Arrival port :   Lionel-Groulx  | Bus-25 |   01:20 PM       - 02:00 PM | Destination Port    MacDonald     |   battery Remaining  274 | 
+

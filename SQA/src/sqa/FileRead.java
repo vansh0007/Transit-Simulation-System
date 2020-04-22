@@ -13,7 +13,7 @@ public class FileRead {
 		 ArrayList<String> timeline1 = new ArrayList();
 		// TODO Auto-generated method stub
  
-		FileInputStream fis = new FileInputStream("C:/Users/vansh/Desktop/New folder (11)/SQ1.txt");
+		FileInputStream fis = new FileInputStream("C:/Users/vansh/Desktop/Poject big data/sqa/Transit-Simulation-System/SQA/ScheduleData/SQ1.txt");
  
 		 		Scanner sc = new Scanner(fis);
 		int count = 0;

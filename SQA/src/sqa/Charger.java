@@ -6,9 +6,16 @@
 package sqa;
 
 import java.awt.event.ActionEvent;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
 /**
@@ -138,7 +145,12 @@ public class Charger extends javax.swing.JFrame {
         jButton1.setText("Next");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                try {
+					jButton1ActionPerformed(evt);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
 
@@ -344,7 +356,7 @@ public class Charger extends javax.swing.JFrame {
                         .addComponent(Total_price, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 53, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(charger2_capacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -372,7 +384,7 @@ public class Charger extends javax.swing.JFrame {
                     .addComponent(bus_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
@@ -416,7 +428,7 @@ public class Charger extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(Total_charger))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Predict)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -575,6 +587,7 @@ userInterface();
 		 
         finalWorking();
         
+        
 		// TODO add your handling code here:
 	}// GEN-LAST:event_PredictActionPerformed
 
@@ -596,7 +609,7 @@ userInterface();
 		
 	}
 
-	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
+	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws FileNotFoundException, IOException {// GEN-FIRST:event_jButton1ActionPerformed
 		 item= new ArrayList<>();
 		  
 		 item.add(Manufacturer.getSelectedIndex());
@@ -618,7 +631,8 @@ userInterface();
 			item.add(Integer.parseInt(number_fast.getText()));
 			item.add(Integer.parseInt(Total_charger_price.getText()));
 			item.add(price_of_buses);
-			System.out.println("gg"+item);
+			 
+			 
 		Charger obj = new Charger();
 		 
 		Bus bus = new Bus(obj);
@@ -633,7 +647,8 @@ userInterface();
 	/**
 	 * @param args the command line arguments
 	 */
-    
+	static String everything;
+	 
     
 	 	
 	
@@ -750,6 +765,12 @@ userInterface();
 	}
 	
 	
+	
+	
+	
+	
+	
+	
 	public static void  main(String[]args) {
 		
 		Charger.userInterface();
@@ -757,49 +778,52 @@ userInterface();
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    static javax.swing.JComboBox<String> Manufacturer;
-    static javax.swing.JButton Predict;
-    static javax.swing.JButton Reset;
-    static javax.swing.JLabel Total_buses;
-    static javax.swing.JLabel Total_charger;
-    static javax.swing.JLabel Total_charger_price;
-    static javax.swing.JLabel Total_price;
-    static javax.swing.JComboBox<String> battery_selector;
-    static javax.swing.JTextField bus_price;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    static javax.swing.JComboBox<String> charger1_capacity;
-    static javax.swing.JComboBox<String> charger1_manufacturer;
-    static javax.swing.JTextField charger1_price;
-    static javax.swing.JComboBox<String> charger2_capacity;
-    static javax.swing.JComboBox<String> charger2_manufaturer;
-    static javax.swing.JTextField charger2_price;
-    static javax.swing.JLabel intransit;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    static javax.swing.JLabel number_Slow;
-    static javax.swing.JLabel number_fast;
-    static javax.swing.JLabel portE;
-    static javax.swing.JLabel portW;
-    // End of variables declaration//GEN-END:variables
-}
+	 static javax.swing.JComboBox<String> Manufacturer;
+	    static javax.swing.JButton Predict;
+	    static javax.swing.JButton Reset;
+	    static javax.swing.JLabel Total_buses;
+	    static javax.swing.JLabel Total_charger;
+	    static javax.swing.JLabel Total_charger_price;
+	    static javax.swing.JLabel Total_price;
+	    static javax.swing.JComboBox<String> battery_selector;
+	    static javax.swing.JTextField bus_price;
+	    private javax.swing.ButtonGroup buttonGroup1;
+	    private javax.swing.ButtonGroup buttonGroup2;
+	    static javax.swing.JComboBox<String> charger1_capacity;
+	    static javax.swing.JComboBox<String> charger1_manufacturer;
+	    static javax.swing.JTextField charger1_price;
+	    static javax.swing.JComboBox<String> charger2_capacity;
+	    static javax.swing.JComboBox<String> charger2_manufaturer;
+	    static javax.swing.JTextField charger2_price;
+	  static javax.swing.JLabel intransit;
+	    private javax.swing.JButton jButton1;
+	    private javax.swing.JFrame jFrame1;
+	    private javax.swing.JLabel jLabel1;
+	    private javax.swing.JLabel jLabel10;
+	    private javax.swing.JLabel jLabel11;
+	    private javax.swing.JLabel jLabel12;
+	    private javax.swing.JLabel jLabel13;
+	    private javax.swing.JLabel jLabel14;
+	    private javax.swing.JLabel jLabel15;
+	    private javax.swing.JLabel jLabel16;
+	    private javax.swing.JLabel jLabel17;
+	    private javax.swing.JLabel jLabel18;
+	    private javax.swing.JLabel jLabel19;
+	    private javax.swing.JLabel jLabel2;
+	    private javax.swing.JLabel jLabel20;
+	    private javax.swing.JLabel jLabel3;
+	    private javax.swing.JLabel jLabel4;
+	    private javax.swing.JLabel jLabel5;
+	    private javax.swing.JLabel jLabel6;
+	    private javax.swing.JLabel jLabel7;
+	    private javax.swing.JLabel jLabel8;
+	    private javax.swing.JLabel jLabel9;
+	    private javax.swing.JScrollPane jScrollPane1;
+	    private javax.swing.JTextArea jTextArea1;
+	    static javax.swing.JLabel number_Slow;
+	    static javax.swing.JLabel number_fast;
+	    static javax.swing.JLabel portE;
+	    static javax.swing.JLabel portW;
+	    // End of variables declaration//GEN-END:variables
+	}
+

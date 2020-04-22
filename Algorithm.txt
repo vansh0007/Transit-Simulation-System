@@ -67,8 +67,9 @@ Algoritm 3:  Charging Function(Time)
 
 1.  if Time = charging Schedule:
 2.    while  Time >=value in charging_schdeule && Time < value in charging_schdeule: 
-2.    		increment the battery values in porta and portb
-3  return updated battery charged values of buses in porta and portb
+3.    		increment the battery values in porta and portb
+4.   Battery Capacity increase = (bus battery/ charger capacity)* Time (30 minutes). 
+4.  return updated battery charged values of buses in porta and portb
 
 
   
