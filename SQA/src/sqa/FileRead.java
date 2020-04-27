@@ -8,7 +8,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileRead {
-	
+	/*
+	 * Function GetWest reads the text file schedule of port Lionel and stores it into the ArrayList.
+	 * return ArrayList containing the schedule of buses in minutes.
+	 */
 	public static ArrayList<String> getWest() throws IOException {
 		 ArrayList<String> timeline1 = new ArrayList();
 		// TODO Auto-generated method stub

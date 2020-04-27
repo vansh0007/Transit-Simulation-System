@@ -7,7 +7,11 @@ import java.util.Scanner;
 
 public class EastRead {
 	
-	 
+	/*
+	 * Function GetWest reads the text file schedule of port MacDonald and stores it into the ArrayList.
+	 * return ArrayList containing the schedule of buses in minutes
+	 * 
+	 */
 		// TODO Auto-generated method stub
 		public static ArrayList<String> getEast() throws IOException {
 			 ArrayList<String> timeline2 = new ArrayList();

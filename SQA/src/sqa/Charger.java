@@ -20,24 +20,19 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author vansh
+ * @author vansh Charger class containg all the main Interface
  */
 public class Charger extends javax.swing.JFrame {
-
-    
 
 	public HashMap<String, HashMap<String, Integer>> ModelName;
 	public HashMap<String, Integer> xyz;
 	public HashMap<String, Integer> middle;
-     static int bus_selection;
-     static String value;
-    static ArrayList<String> slow_transit = new ArrayList<>();
-    static Charger obj;
-     static ArrayList<Integer> item;
-     static int price_of_buses;
-     
-     
-    
+	static int bus_selection;
+	static String value;
+	static ArrayList<String> slow_transit = new ArrayList<>();
+	static Charger obj;
+	static ArrayList<Integer> item;
+	static int price_of_buses;
 
 	/**
 	 * Creates new form Charger
@@ -48,9 +43,6 @@ public class Charger extends javax.swing.JFrame {
 
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-	 
-		 
-
 	}
 
 	/**
@@ -60,399 +52,441 @@ public class Charger extends javax.swing.JFrame {
 	 */
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+	// <editor-fold defaultstate="collapsed" desc="Generated
+	// Code">//GEN-BEGIN:initComponents
+	private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        Manufacturer = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        battery_selector = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        Predict = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        charger1_manufacturer = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        Total_buses = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        portW = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        portE = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        Total_charger = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        Total_price = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        intransit = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        charger1_price = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        bus_price = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        charger2_price = new javax.swing.JTextField();
-        charger2_manufaturer = new javax.swing.JComboBox<>();
-        charger2_capacity = new javax.swing.JComboBox<>();
-        charger1_capacity = new javax.swing.JComboBox<>();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        Total_charger_price = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        number_Slow = new javax.swing.JLabel();
-        number_fast = new javax.swing.JLabel();
-        Reset = new javax.swing.JButton();
+		jFrame1 = new javax.swing.JFrame();
+		buttonGroup1 = new javax.swing.ButtonGroup();
+		buttonGroup2 = new javax.swing.ButtonGroup();
+		Manufacturer = new javax.swing.JComboBox<>();
+		jLabel1 = new javax.swing.JLabel();
+		battery_selector = new javax.swing.JComboBox<>();
+		jLabel2 = new javax.swing.JLabel();
+		jLabel3 = new javax.swing.JLabel();
+		jButton1 = new javax.swing.JButton();
+		Predict = new javax.swing.JButton();
+		jLabel7 = new javax.swing.JLabel();
+		charger1_manufacturer = new javax.swing.JComboBox<>();
+		jLabel4 = new javax.swing.JLabel();
+		Total_buses = new javax.swing.JLabel();
+		jLabel6 = new javax.swing.JLabel();
+		portW = new javax.swing.JLabel();
+		jLabel9 = new javax.swing.JLabel();
+		portE = new javax.swing.JLabel();
+		jLabel11 = new javax.swing.JLabel();
+		Total_charger = new javax.swing.JLabel();
+		jLabel13 = new javax.swing.JLabel();
+		Total_price = new javax.swing.JLabel();
+		jLabel5 = new javax.swing.JLabel();
+		intransit = new javax.swing.JLabel();
+		jLabel8 = new javax.swing.JLabel();
+		charger1_price = new javax.swing.JTextField();
+		jLabel10 = new javax.swing.JLabel();
+		bus_price = new javax.swing.JTextField();
+		jLabel12 = new javax.swing.JLabel();
+		jLabel14 = new javax.swing.JLabel();
+		jLabel15 = new javax.swing.JLabel();
+		jLabel16 = new javax.swing.JLabel();
+		charger2_price = new javax.swing.JTextField();
+		charger2_manufaturer = new javax.swing.JComboBox<>();
+		charger2_capacity = new javax.swing.JComboBox<>();
+		charger1_capacity = new javax.swing.JComboBox<>();
+		jLabel17 = new javax.swing.JLabel();
+		jLabel18 = new javax.swing.JLabel();
+		Total_charger_price = new javax.swing.JLabel();
+		jLabel19 = new javax.swing.JLabel();
+		jLabel20 = new javax.swing.JLabel();
+		number_Slow = new javax.swing.JLabel();
+		number_fast = new javax.swing.JLabel();
+		Reset = new javax.swing.JButton();
 
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+		javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+		jFrame1.getContentPane().setLayout(jFrame1Layout);
+		jFrame1Layout.setHorizontalGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGap(0, 400, Short.MAX_VALUE));
+		jFrame1Layout.setVerticalGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGap(0, 300, Short.MAX_VALUE));
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Manufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOVABUS-LFSe+ 1" }));
-        Manufacturer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ManufacturerActionPerformed(evt);
-            }
-        });
+		Manufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOVABUS-LFSe+ 1" }));
+		Manufacturer.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				ManufacturerActionPerformed(evt);
+			}
+		});
 
-        jLabel1.setText("Manufacturer");
+		jLabel1.setText("Manufacturer");
 
-        battery_selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "\"\"" }));
-        battery_selector.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                battery_selectorActionPerformed(evt);
-            }
-        });
+		battery_selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "\"\"" }));
+		battery_selector.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				battery_selectorActionPerformed(evt);
+			}
+		});
 
-        jLabel2.setText("Model");
+		jLabel2.setText("Model");
 
-        jLabel3.setBackground(new java.awt.Color(204, 255, 204));
-        jLabel3.setText("BUS  SELECTION :");
+		jLabel3.setBackground(new java.awt.Color(204, 255, 204));
+		jLabel3.setText("BUS  SELECTION :");
 
-        jButton1.setText("Next");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                try {
+		jButton1.setText("Next");
+		jButton1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				try {
 					jButton1ActionPerformed(evt);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-            }
-        });
+			}
+		});
 
-        Predict.setText("Predict");
-        Predict.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                try {
+		Predict.setText("Predict");
+		Predict.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				try {
 					PredictActionPerformed(evt);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-            }
-        });
+			}
+		});
 
-        jLabel7.setText("Slow Charger Manufacturer");
+		jLabel7.setText("Slow Charger Manufacturer");
 
-        charger1_manufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HELIOX", "ABB" }));
-        charger1_manufacturer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                charger1_manufacturerActionPerformed(evt);
-            }
-        });
+		charger1_manufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HELIOX", "ABB" }));
+		charger1_manufacturer.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				charger1_manufacturerActionPerformed(evt);
+			}
+		});
 
-        jLabel4.setText("Total Buses:");
+		jLabel4.setText("Total Buses:");
 
-        Total_buses.setText("0");
+		Total_buses.setText("0");
 
-        jLabel6.setText("Buses in Port West:");
+		jLabel6.setText("Buses in Port West:");
 
-        portW.setText("0");
+		portW.setText("0");
 
-        jLabel9.setText("Buses in Port East:");
+		jLabel9.setText("Buses in Port East:");
 
-        portE.setText("0");
+		portE.setText("0");
 
-        jLabel11.setText("Total Charger:");
+		jLabel11.setText("Total Charger:");
 
-        Total_charger.setText("0");
+		Total_charger.setText("0");
 
-        jLabel13.setText("Total Price in CAD:");
+		jLabel13.setText("Total Price in CAD:");
 
-        Total_price.setText("0");
+		Total_price.setText("0");
 
-        jLabel5.setText("Buses in Transit:");
+		jLabel5.setText("Buses in Transit:");
 
-        intransit.setText("0");
+		intransit.setText("0");
 
-        jLabel8.setText("Slow Charger  Price");
+		jLabel8.setText("Slow Charger  Price");
 
-        charger1_price.setText("0");
-        charger1_price.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                charger1_priceActionPerformed(evt);
-            }
-        });
+		charger1_price.setText("0");
+		charger1_price.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				charger1_priceActionPerformed(evt);
+			}
+		});
 
-        jLabel10.setText("Bus Price");
+		jLabel10.setText("Bus Price");
 
-        bus_price.setText("0");
-        bus_price.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bus_priceActionPerformed(evt);
-            }
-        });
+		bus_price.setText("0");
+		bus_price.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				bus_priceActionPerformed(evt);
+			}
+		});
 
-        jLabel12.setText(" capacity");
+		jLabel12.setText(" capacity");
 
-        jLabel14.setText("Fast Charge  Manufacturer ");
+		jLabel14.setText("Fast Charge  Manufacturer ");
 
-        jLabel15.setText(" Capacity");
+		jLabel15.setText(" Capacity");
 
-        jLabel16.setText("Fast Charger Price");
+		jLabel16.setText("Fast Charger Price");
 
-        charger2_price.setText("0");
-        charger2_price.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                charger2_priceActionPerformed(evt);
-            }
-        });
+		charger2_price.setText("0");
+		charger2_price.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				charger2_priceActionPerformed(evt);
+			}
+		});
 
-        charger2_manufaturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HELIOX", "ABB" }));
-        charger2_manufaturer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                charger2_manufaturerActionPerformed(evt);
-            }
-        });
+		charger2_manufaturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HELIOX", "ABB" }));
+		charger2_manufaturer.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				charger2_manufaturerActionPerformed(evt);
+			}
+		});
 
-        charger2_capacity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "350", "450" }));
-        charger2_capacity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                charger2_capacityActionPerformed(evt);
-            }
-        });
+		charger2_capacity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "350", "450" }));
+		charger2_capacity.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				charger2_capacityActionPerformed(evt);
+			}
+		});
 
-        charger1_capacity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "\"" }));
-        charger1_capacity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                charger1_capacityActionPerformed(evt);
-            }
-        });
+		charger1_capacity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "\"" }));
+		charger1_capacity.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				charger1_capacityActionPerformed(evt);
+			}
+		});
 
-        jLabel17.setText("Charger Selection:");
+		jLabel17.setText("Charger Selection:");
 
-        jLabel18.setText("Total Charger Price");
+		jLabel18.setText("Total Charger Price");
 
-        Total_charger_price.setText("0");
+		Total_charger_price.setText("0");
 
-        jLabel19.setText("Number of Slow Charger");
+		jLabel19.setText("Number of Slow Charger");
 
-        jLabel20.setText("Number of Fast Chargers:");
+		jLabel20.setText("Number of Fast Chargers:");
 
-        number_Slow.setText("0");
+		number_Slow.setText("0");
 
-        number_fast.setText("0");
+		number_fast.setText("0");
 
-        Reset.setText("Reset Values");
-        Reset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ResetActionPerformed(evt);
-            }
-        });
+		Reset.setText("Reset Values");
+		Reset.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				ResetActionPerformed(evt);
+			}
+		});
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Manufacturer, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(charger1_manufacturer, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(battery_selector, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(charger1_capacity, javax.swing.GroupLayout.Alignment.LEADING, 0, 75, Short.MAX_VALUE)
-                                        .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(74, 74, 74)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(bus_price, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(charger1_price, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel14)
-                                            .addComponent(charger2_manufaturer, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(209, 209, 209)
-                        .addComponent(Predict)
-                        .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(26, 26, 26)
-                                .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Total_buses, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Total_charger, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(portW, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(portE, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(intransit, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(53, 53, 53)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(number_Slow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(47, 47, 47))
-                            .addComponent(number_fast, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(Total_charger_price, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(114, 114, 114))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Total_price, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 53, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(charger2_capacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(charger2_price, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(58, 58, 58))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel10)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(battery_selector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Manufacturer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bus_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(jLabel17)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(charger1_manufacturer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(charger1_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(charger2_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(charger2_manufaturer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(charger1_capacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(charger2_capacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Total_buses)
-                    .addComponent(jLabel19)
-                    .addComponent(number_Slow))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(portW)
-                    .addComponent(jLabel20)
-                    .addComponent(number_fast))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(portE)
-                    .addComponent(jLabel18)
-                    .addComponent(Total_charger_price))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(intransit)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Total_price))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(Total_charger))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Predict)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Reset))
-                .addContainerGap())
-        );
+		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+		getContentPane().setLayout(layout);
+		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
+				.createSequentialGroup()
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
+						.createSequentialGroup().addGap(51, 51, 51)
+						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 217,
+										javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addGroup(layout.createSequentialGroup()
+										.addGroup(layout
+												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+												.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(Manufacturer, 0, javax.swing.GroupLayout.DEFAULT_SIZE,
+														Short.MAX_VALUE)
+												.addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(charger1_manufacturer, 0,
+														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 94,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+										.addGap(41, 41, 41)
+										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(jLabel2)
+												.addComponent(battery_selector, javax.swing.GroupLayout.PREFERRED_SIZE,
+														107, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addGroup(layout
+														.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																false)
+														.addComponent(charger1_capacity,
+																javax.swing.GroupLayout.Alignment.LEADING, 0, 75,
+																Short.MAX_VALUE)
+														.addComponent(jLabel12,
+																javax.swing.GroupLayout.Alignment.LEADING,
+																javax.swing.GroupLayout.DEFAULT_SIZE,
+																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addGroup(layout.createSequentialGroup().addGap(74, 74, 74)
+														.addGroup(layout
+																.createParallelGroup(
+																		javax.swing.GroupLayout.Alignment.LEADING)
+																.addComponent(jLabel10,
+																		javax.swing.GroupLayout.PREFERRED_SIZE, 111,
+																		javax.swing.GroupLayout.PREFERRED_SIZE)
+																.addComponent(bus_price,
+																		javax.swing.GroupLayout.PREFERRED_SIZE, 101,
+																		javax.swing.GroupLayout.PREFERRED_SIZE)))
+												.addGroup(layout.createSequentialGroup()
+														.addPreferredGap(
+																javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+														.addGroup(layout
+																.createParallelGroup(
+																		javax.swing.GroupLayout.Alignment.LEADING)
+																.addComponent(charger1_price,
+																		javax.swing.GroupLayout.PREFERRED_SIZE, 75,
+																		javax.swing.GroupLayout.PREFERRED_SIZE)
+																.addComponent(jLabel8,
+																		javax.swing.GroupLayout.PREFERRED_SIZE, 115,
+																		javax.swing.GroupLayout.PREFERRED_SIZE))
+														.addGap(18, 18, 18)
+														.addGroup(layout
+																.createParallelGroup(
+																		javax.swing.GroupLayout.Alignment.LEADING)
+																.addComponent(jLabel14)
+																.addComponent(charger2_manufaturer,
+																		javax.swing.GroupLayout.PREFERRED_SIZE, 80,
+																		javax.swing.GroupLayout.PREFERRED_SIZE)))))
+								.addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 144,
+										javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 160,
+										javax.swing.GroupLayout.PREFERRED_SIZE)))
+						.addGroup(layout.createSequentialGroup().addGap(209, 209, 209).addComponent(Predict)
+								.addGap(11, 11, 11)
+								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+										.addGroup(
+												layout.createSequentialGroup().addComponent(jButton1).addGap(26, 26, 26)
+														.addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE,
+																115, javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addGroup(layout.createSequentialGroup().addGroup(layout
+												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(Total_buses, javax.swing.GroupLayout.PREFERRED_SIZE, 107,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(Total_charger, javax.swing.GroupLayout.PREFERRED_SIZE, 52,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(portW, javax.swing.GroupLayout.PREFERRED_SIZE, 71,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(portE, javax.swing.GroupLayout.PREFERRED_SIZE, 62,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(intransit, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
+														javax.swing.GroupLayout.PREFERRED_SIZE))
+												.addGap(53, 53, 53)
+												.addGroup(layout
+														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+														.addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE,
+																120, javax.swing.GroupLayout.PREFERRED_SIZE)
+														.addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE,
+																110, javax.swing.GroupLayout.PREFERRED_SIZE)
+														.addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE,
+																136, javax.swing.GroupLayout.PREFERRED_SIZE)
+														.addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE,
+																136, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+				.addGap(14, 14, 14).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addGroup(
+								layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+										.addGroup(javax.swing.GroupLayout.Alignment.LEADING,
+												layout.createSequentialGroup()
+														.addComponent(number_Slow, javax.swing.GroupLayout.DEFAULT_SIZE,
+																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+														.addGap(47, 47, 47))
+										.addComponent(
+												number_fast, javax.swing.GroupLayout.DEFAULT_SIZE,
+												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addGroup(javax.swing.GroupLayout.Alignment.LEADING,
+												layout.createSequentialGroup()
+														.addComponent(Total_charger_price,
+																javax.swing.GroupLayout.PREFERRED_SIZE, 66,
+																javax.swing.GroupLayout.PREFERRED_SIZE)
+														.addGap(0, 0, Short.MAX_VALUE)))
+								.addGap(114, 114, 114))
+						.addGroup(layout.createSequentialGroup()
+								.addComponent(Total_price, javax.swing.GroupLayout.PREFERRED_SIZE, 117,
+										javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+								layout.createSequentialGroup().addGap(0, 53, Short.MAX_VALUE)
+										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 126,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(charger2_capacity, javax.swing.GroupLayout.PREFERRED_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE,
+														javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(charger2_price, javax.swing.GroupLayout.PREFERRED_SIZE,
+														77, javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 111,
+														javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addGap(58, 58, 58)))));
+		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
+				.createSequentialGroup().addGap(28, 28, 28)
+				.addComponent(
+						jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addGap(18, 18, 18)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jLabel1)
+						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+								layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+										.addComponent(jLabel2).addComponent(jLabel10)))
+				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+						.addComponent(battery_selector, javax.swing.GroupLayout.PREFERRED_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addComponent(Manufacturer, javax.swing.GroupLayout.PREFERRED_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addComponent(bus_price, javax.swing.GroupLayout.PREFERRED_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+				.addGap(31, 31, 31).addComponent(jLabel17).addGap(18, 18, 18)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel7)
+						.addComponent(jLabel8).addComponent(jLabel12).addComponent(jLabel14).addComponent(jLabel15)
+						.addComponent(jLabel16))
+				.addGap(18, 18, 18)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+						.addComponent(charger1_manufacturer, javax.swing.GroupLayout.PREFERRED_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addComponent(charger1_price, javax.swing.GroupLayout.PREFERRED_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addComponent(charger2_price, javax.swing.GroupLayout.PREFERRED_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addComponent(charger2_manufaturer, javax.swing.GroupLayout.PREFERRED_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addComponent(charger1_capacity, javax.swing.GroupLayout.PREFERRED_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addComponent(charger2_capacity, javax.swing.GroupLayout.PREFERRED_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+				.addGap(39, 39, 39)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+						.addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26,
+								javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addComponent(Total_buses).addComponent(jLabel19).addComponent(number_Slow))
+				.addGap(28, 28, 28)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel6)
+						.addComponent(portW).addComponent(jLabel20).addComponent(number_fast))
+				.addGap(34, 34, 34)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel9)
+						.addComponent(portE).addComponent(jLabel18).addComponent(Total_charger_price))
+				.addGap(28, 28, 28)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel5)
+						.addComponent(intransit)
+						.addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 28,
+								javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addComponent(Total_price))
+				.addGap(32, 32, 32)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel11)
+						.addComponent(Total_charger))
+				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(Predict)
+						.addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(Reset))
+				.addContainerGap()));
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+		pack();
+	}// </editor-fold>//GEN-END:initComponents
 
-    private void charger1_priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_charger1_priceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_charger1_priceActionPerformed
+	private void charger1_priceActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_charger1_priceActionPerformed
+		// TODO add your handling code here:
+	}// GEN-LAST:event_charger1_priceActionPerformed
 
-    private void bus_priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bus_priceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bus_priceActionPerformed
+	private void bus_priceActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_bus_priceActionPerformed
+		// TODO add your handling code here:
+	}// GEN-LAST:event_bus_priceActionPerformed
 
-    private void charger2_priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_charger2_priceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_charger2_priceActionPerformed
+	private void charger2_priceActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_charger2_priceActionPerformed
+		// TODO add your handling code here:
+	}// GEN-LAST:event_charger2_priceActionPerformed
 
-    private void charger1_capacityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_charger1_capacityActionPerformed
-      //String value= charger1_capacity.getSelectedItem().toString();   
+	private void charger1_capacityActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_charger1_capacityActionPerformed
+		// String value= charger1_capacity.getSelectedItem().toString();
 //      if(Integer.parseInt(value)==50) {
 //    	  charger2_capacity.setSelectedIndex(1);}
 //    	  else if (Integer.parseInt(value)==100) {
@@ -467,64 +501,59 @@ public class Charger extends javax.swing.JFrame {
 //    	  
 //    	  // TODO add your handling code here:
 //      }
-    }//GEN-LAST:event_charger1_capacityActionPerformed
+	}// GEN-LAST:event_charger1_capacityActionPerformed
 
-    private void charger2_capacityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_charger2_capacityActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_charger2_capacityActionPerformed
+	private void charger2_capacityActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_charger2_capacityActionPerformed
+		// TODO add your handling code here:
+	}// GEN-LAST:event_charger2_capacityActionPerformed
 
-    private void battery_selectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_battery_selectorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_battery_selectorActionPerformed
+	private void battery_selectorActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_battery_selectorActionPerformed
+		// TODO add your handling code here:
+	}// GEN-LAST:event_battery_selectorActionPerformed
 
-    private void charger1_manufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_charger1_manufacturerActionPerformed
-    String  value = charger1_manufacturer.getSelectedItem().toString();
-         
-        if (value.equalsIgnoreCase("HELIOX")) {
-        charger1_capacity.removeAllItems();
-        charger1_capacity.addItem("50");
-        charger1_capacity.addItem("450");
-        charger2_capacity.removeAllItems();
-        charger2_capacity.addItem("50");
-        charger2_capacity.addItem("450");
-        
-       
-         
-          
-         charger2_manufaturer.setSelectedIndex(0);
-         charger2_manufaturer.setEnabled(false);
-         
-         
-        }
-        
-        else if (value.equalsIgnoreCase("ABB")){
-           
-        	charger1_capacity.removeAllItems();
-            charger1_capacity.addItem("100");
-            charger1_capacity.addItem("300");
-            charger2_capacity.removeAllItems();
-            charger2_capacity.addItem("100");
-            charger2_capacity.addItem("300");
-            
-           
-             
-              
-            
-             charger2_manufaturer.setSelectedIndex(1);
-             charger2_manufaturer.setEnabled(false);
-        
-        }    // TODO add your handling code here:
-    }//GEN-LAST:event_charger1_manufacturerActionPerformed
+	private void charger1_manufacturerActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_charger1_manufacturerActionPerformed
+		String value = charger1_manufacturer.getSelectedItem().toString();
 
-    private void charger2_manufaturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_charger2_manufaturerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_charger2_manufaturerActionPerformed
+		if (value.equalsIgnoreCase("HELIOX")) {
+			charger1_capacity.removeAllItems();
+			charger1_capacity.addItem("50");
+			charger1_capacity.addItem("450");
+			charger2_capacity.removeAllItems();
+			charger2_capacity.addItem("50");
+			charger2_capacity.addItem("450");
 
-    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
-this.dispose();
-userInterface();
+			charger2_manufaturer.setSelectedIndex(0);
+			charger2_manufaturer.setEnabled(false);
+
+		}
+
+		else if (value.equalsIgnoreCase("ABB")) {
+
+			charger1_capacity.removeAllItems();
+			charger1_capacity.addItem("100");
+			charger1_capacity.addItem("300");
+			charger2_capacity.removeAllItems();
+			charger2_capacity.addItem("100");
+			charger2_capacity.addItem("300");
+
+			charger2_manufaturer.setSelectedIndex(1);
+			charger2_manufaturer.setEnabled(false);
+
+		} // TODO add your handling code here:
+	}// GEN-LAST:event_charger1_manufacturerActionPerformed
+
+	private void charger2_manufaturerActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_charger2_manufaturerActionPerformed
+		// TODO add your handling code here:
+	}// GEN-LAST:event_charger2_manufaturerActionPerformed
+
+	private void ResetActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_ResetActionPerformed
+		this.dispose();
+		userInterface();
 // TODO add your handling code here:
-    }//GEN-LAST:event_ResetActionPerformed
+	}// GEN-LAST:event_ResetActionPerformed
+	/*
+	 * This function was called when an Manufacturer is clicked
+	 */
 
 	private void ManufacturerActionPerformed(java.awt.event.ActionEvent evt) {
 
@@ -544,37 +573,8 @@ userInterface();
          battery_selector.addItem("594");
         
         }
-//        if(Model.getItemCount()!=0){
-//         Model.removeAllItems();
-//                 }
-    
-        
-        
-        
-        
-        
-        
-        
-		 
-
-		// TODO add your handling code here:
-	}// GEN-LAST:event_ManufacturerActionPerformed
-
-//	 public   void battery_selectorActionPerformed(java.awt.event.ActionEvent evt) {
-//
-//		 value = battery_selector.getSelectedItem().toString();
-//         
-//       
-//
-//		
-//
-////		table.setValueAt((Object) item, 0, 0);
-////		table.setValueAt((Object) value[0], 0, 1);
-////		table.setValueAt((Object) value[1], 0, 2);
-//
-//		// TODO add your handling code here:
-//	}
-
+	}
+ 
 	private void Manufacturer1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Manufacturer1ActionPerformed
 		// TODO add your handling code here:
 	}// GEN-LAST:event_Manufacturer1ActionPerformed
@@ -584,61 +584,60 @@ userInterface();
 	}// GEN-LAST:event_Model1ActionPerformed
 
 	private void PredictActionPerformed(java.awt.event.ActionEvent evt) throws IOException {// GEN-FIRST:event_PredictActionPerformed
-		 
-        finalWorking();
-        
-        
+
+		finalWorking();
+
 		// TODO add your handling code here:
 	}// GEN-LAST:event_PredictActionPerformed
 
-	public void finalWorking() throws IOException  {
+	public void finalWorking() throws IOException {
 		Working obj = new Working();
-	 System.out.println("hello"+ obj.total_bus);
-        obj.bus_battery_capacity=  Integer.parseInt(battery_selector.getSelectedItem().toString());
-     ArrayList<Integer> abc=  obj.Work(obj.bus_battery_capacity);
-     Total_buses.setText(abc.get(3)+"");
-     portW.setText(abc.get(0)+"");
-     portE.setText(abc.get(1)+"");
-     Total_charger.setText(abc.get(4)+"");
-     number_fast.setText(abc.get(5)+"");
-     number_Slow.setText(abc.get(6)+"");
-     Total_charger_price.setText(abc.get(7)+""); 
-     price_of_buses= Integer.parseInt(abc.get(7)+"")+    (Integer.parseInt(abc.get(8)+"")* Integer.parseInt(bus_price.getText().toString()));
-     Total_price.setText(price_of_buses+"");
-     intransit.setText(abc.get(2)+"");
-		
+		System.out.println("hello" + obj.total_bus);
+		obj.bus_battery_capacity = Integer.parseInt(battery_selector.getSelectedItem().toString());
+		ArrayList<Integer> abc = obj.Work(obj.bus_battery_capacity);
+		Total_buses.setText(abc.get(3) + "");
+		portW.setText(abc.get(0) + "");
+		portE.setText(abc.get(1) + "");
+		Total_charger.setText(abc.get(4) + "");
+		number_fast.setText(abc.get(5) + "");
+		number_Slow.setText(abc.get(6) + "");
+		Total_charger_price.setText(abc.get(7) + "");
+		price_of_buses = Integer.parseInt(abc.get(7) + "")
+				+ (Integer.parseInt(abc.get(8) + "") * Integer.parseInt(bus_price.getText().toString()));
+		Total_price.setText(price_of_buses + "");
+		intransit.setText(abc.get(2) + "");
+
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws FileNotFoundException, IOException {// GEN-FIRST:event_jButton1ActionPerformed
-		 item= new ArrayList<>();
-		  
-		 item.add(Manufacturer.getSelectedIndex());
-			item.add(battery_selector.getSelectedIndex());
-			item.add(Integer.parseInt(bus_price.getText()));
-			item.add(charger1_manufacturer.getSelectedIndex());
-			item.add(charger1_capacity.getSelectedIndex());
-			item.add(Integer.parseInt(charger1_price.getText()));
-			item.add(charger2_manufaturer.getSelectedIndex());
-			item.add(charger2_capacity.getSelectedIndex());
-			item.add(Integer.parseInt(charger2_price.getText()));
-			item.add(Integer.parseInt(Total_buses.getText()));
-			item.add(Integer.parseInt(portW.getText()));
-			item.add(Integer.parseInt(portE.getText()));
-			 
-			item.add(Integer.parseInt(intransit.getText()));
-			item.add(Integer.parseInt(Total_charger.getText()));
-			item.add(Integer.parseInt(number_Slow.getText()));
-			item.add(Integer.parseInt(number_fast.getText()));
-			item.add(Integer.parseInt(Total_charger_price.getText()));
-			item.add(price_of_buses);
-			 
-			 
+		item = new ArrayList<>();
+
+		item.add(Manufacturer.getSelectedIndex());
+		item.add(battery_selector.getSelectedIndex());
+		item.add(Integer.parseInt(bus_price.getText()));
+		item.add(charger1_manufacturer.getSelectedIndex());
+		item.add(charger1_capacity.getSelectedIndex());
+		item.add(Integer.parseInt(charger1_price.getText()));
+		item.add(charger2_manufaturer.getSelectedIndex());
+		item.add(charger2_capacity.getSelectedIndex());
+		item.add(Integer.parseInt(charger2_price.getText()));
+		item.add(Integer.parseInt(Total_buses.getText()));
+		item.add(Integer.parseInt(portW.getText()));
+		item.add(Integer.parseInt(portE.getText()));
+
+		item.add(Integer.parseInt(intransit.getText()));
+		item.add(Integer.parseInt(Total_charger.getText()));
+		item.add(Integer.parseInt(number_Slow.getText()));
+		item.add(Integer.parseInt(number_fast.getText()));
+		item.add(Integer.parseInt(Total_charger_price.getText()));
+		item.add(price_of_buses);
+
 		Charger obj = new Charger();
-		 
+
 		Bus bus = new Bus(obj);
 
 		bus.setVisible(true);
-		 
+
 		this.dispose();
 
 		// TODO add your handling code here:
@@ -648,45 +647,31 @@ userInterface();
 	 * @param args the command line arguments
 	 */
 	static String everything;
-	 
-    
-	 	
-	
-     
-    public ArrayList<String> set_Value(ArrayList<String> a){
-        for (String str: a){
-        int   	minute =Integer.parseInt(str.split(",")[0]);
-        	 int hour = minute / 60;
-			    minute %= 60;
-			    String p = "AM";
-			    if (hour >= 12) {
-			        hour %= 12;
-			        p = "PM";
-			    }
-			    if (hour == 0) {
-			        hour = 12;
-			    }
-			    String abc= (hour < 10 ? "0" + hour : hour) + ":" + (minute < 10 ? "0" + minute : minute) + " " + p;
-			
-//            String[] abc = str.split(",");
-//            int a1 = Integer.parseInt(abc[0])/60 ;
-//            int a2 = Integer.parseInt(abc[0]) %60;
-//            int b1= Integer.parseInt(abc[1])/60;
-//            int b2 = Integer.parseInt(abc[1])%60;
-            slow_transit.add(abc+"\r\n");
-            
-            
-            
-            
-        }
-        
-        return slow_transit;
-    }
-    
-    
-    
-    
-	public static void userInterface( ) {
+
+	public ArrayList<String> set_Value(ArrayList<String> a) {
+		for (String str : a) {
+			int minute = Integer.parseInt(str.split(",")[0]);
+			int hour = minute / 60;
+			minute %= 60;
+			String p = "AM";
+			if (hour >= 12) {
+				hour %= 12;
+				p = "PM";
+			}
+			if (hour == 0) {
+				hour = 12;
+			}
+			String abc = (hour < 10 ? "0" + hour : hour) + ":" + (minute < 10 ? "0" + minute : minute) + " " + p;
+
+ 
+			slow_transit.add(abc + "\r\n");
+
+		}
+
+		return slow_transit;
+	}
+
+	public static void userInterface() {
 		/* Set the Nimbus look and feel */
 		// <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
 		// (optional) ">
@@ -695,7 +680,7 @@ userInterface();
 		 * look and feel. For details see
 		 * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
 		 */
-		
+
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
 				if ("Nimbus".equals(info.getName())) {
@@ -721,33 +706,25 @@ userInterface();
 
 			}
 		});
-        
-		
-        
-       
-        
-		
-		
+
 	}
-	
+
 	public static ArrayList<String> fastText(ArrayList<Integer> a) {
 		ArrayList<String> fast_list = new ArrayList<>();
-		 for (Integer minute: a){
-	            
-			 int hour = minute / 60;
-			    minute %= 60;
-			    String p = "AM";
-			    if (hour >= 12) {
-			        hour %= 12;
-			        p = "PM";
-			    }
-			    if (hour == 0) {
-			        hour = 12;
-			    }
-			    String abc= (hour < 10 ? "0" + hour : hour) + ":" + (minute < 10 ? "0" + minute : minute) + " " + p;
-			
-			 
-			 
+		for (Integer minute : a) {
+
+			int hour = minute / 60;
+			minute %= 60;
+			String p = "AM";
+			if (hour >= 12) {
+				hour %= 12;
+				p = "PM";
+			}
+			if (hour == 0) {
+				hour = 12;
+			}
+			String abc = (hour < 10 ? "0" + hour : hour) + ":" + (minute < 10 ? "0" + minute : minute) + " " + p;
+
 //	            int a1 = it/60 ;
 //	            int a2 = it %60;
 //	            if (a2>60 ) {
@@ -757,73 +734,64 @@ userInterface();
 //	            
 //	            int b1= (it)/60;
 //	            int b2 = a2+15;
-	            fast_list.add(abc+"\r\n");
-		
-		
+			fast_list.add(abc + "\r\n");
+
+		}
+		return fast_list;
 	}
-		 return fast_list;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	public static void  main(String[]args) {
-		
+
+	public static void main(String[] args) {
+
 		Charger.userInterface();
-		
+
 	}
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-	 static javax.swing.JComboBox<String> Manufacturer;
-	    static javax.swing.JButton Predict;
-	    static javax.swing.JButton Reset;
-	    static javax.swing.JLabel Total_buses;
-	    static javax.swing.JLabel Total_charger;
-	    static javax.swing.JLabel Total_charger_price;
-	    static javax.swing.JLabel Total_price;
-	    static javax.swing.JComboBox<String> battery_selector;
-	    static javax.swing.JTextField bus_price;
-	    private javax.swing.ButtonGroup buttonGroup1;
-	    private javax.swing.ButtonGroup buttonGroup2;
-	    static javax.swing.JComboBox<String> charger1_capacity;
-	    static javax.swing.JComboBox<String> charger1_manufacturer;
-	    static javax.swing.JTextField charger1_price;
-	    static javax.swing.JComboBox<String> charger2_capacity;
-	    static javax.swing.JComboBox<String> charger2_manufaturer;
-	    static javax.swing.JTextField charger2_price;
-	  static javax.swing.JLabel intransit;
-	    private javax.swing.JButton jButton1;
-	    private javax.swing.JFrame jFrame1;
-	    private javax.swing.JLabel jLabel1;
-	    private javax.swing.JLabel jLabel10;
-	    private javax.swing.JLabel jLabel11;
-	    private javax.swing.JLabel jLabel12;
-	    private javax.swing.JLabel jLabel13;
-	    private javax.swing.JLabel jLabel14;
-	    private javax.swing.JLabel jLabel15;
-	    private javax.swing.JLabel jLabel16;
-	    private javax.swing.JLabel jLabel17;
-	    private javax.swing.JLabel jLabel18;
-	    private javax.swing.JLabel jLabel19;
-	    private javax.swing.JLabel jLabel2;
-	    private javax.swing.JLabel jLabel20;
-	    private javax.swing.JLabel jLabel3;
-	    private javax.swing.JLabel jLabel4;
-	    private javax.swing.JLabel jLabel5;
-	    private javax.swing.JLabel jLabel6;
-	    private javax.swing.JLabel jLabel7;
-	    private javax.swing.JLabel jLabel8;
-	    private javax.swing.JLabel jLabel9;
-	    private javax.swing.JScrollPane jScrollPane1;
-	    private javax.swing.JTextArea jTextArea1;
-	    static javax.swing.JLabel number_Slow;
-	    static javax.swing.JLabel number_fast;
-	    static javax.swing.JLabel portE;
-	    static javax.swing.JLabel portW;
-	    // End of variables declaration//GEN-END:variables
-	}
-
+	// Variables declaration - do not modify//GEN-BEGIN:variables
+	static javax.swing.JComboBox<String> Manufacturer;
+	static javax.swing.JButton Predict;
+	static javax.swing.JButton Reset;
+	static javax.swing.JLabel Total_buses;
+	static javax.swing.JLabel Total_charger;
+	static javax.swing.JLabel Total_charger_price;
+	static javax.swing.JLabel Total_price;
+	static javax.swing.JComboBox<String> battery_selector;
+	static javax.swing.JTextField bus_price;
+	private javax.swing.ButtonGroup buttonGroup1;
+	private javax.swing.ButtonGroup buttonGroup2;
+	static javax.swing.JComboBox<String> charger1_capacity;
+	static javax.swing.JComboBox<String> charger1_manufacturer;
+	static javax.swing.JTextField charger1_price;
+	static javax.swing.JComboBox<String> charger2_capacity;
+	static javax.swing.JComboBox<String> charger2_manufaturer;
+	static javax.swing.JTextField charger2_price;
+	static javax.swing.JLabel intransit;
+	private javax.swing.JButton jButton1;
+	private javax.swing.JFrame jFrame1;
+	private javax.swing.JLabel jLabel1;
+	private javax.swing.JLabel jLabel10;
+	private javax.swing.JLabel jLabel11;
+	private javax.swing.JLabel jLabel12;
+	private javax.swing.JLabel jLabel13;
+	private javax.swing.JLabel jLabel14;
+	private javax.swing.JLabel jLabel15;
+	private javax.swing.JLabel jLabel16;
+	private javax.swing.JLabel jLabel17;
+	private javax.swing.JLabel jLabel18;
+	private javax.swing.JLabel jLabel19;
+	private javax.swing.JLabel jLabel2;
+	private javax.swing.JLabel jLabel20;
+	private javax.swing.JLabel jLabel3;
+	private javax.swing.JLabel jLabel4;
+	private javax.swing.JLabel jLabel5;
+	private javax.swing.JLabel jLabel6;
+	private javax.swing.JLabel jLabel7;
+	private javax.swing.JLabel jLabel8;
+	private javax.swing.JLabel jLabel9;
+	private javax.swing.JScrollPane jScrollPane1;
+	private javax.swing.JTextArea jTextArea1;
+	static javax.swing.JLabel number_Slow;
+	static javax.swing.JLabel number_fast;
+	static javax.swing.JLabel portE;
+	static javax.swing.JLabel portW;
+	// End of variables declaration//GEN-END:variables
+}

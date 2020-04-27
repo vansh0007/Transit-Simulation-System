@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 import sqa.Charger;
+/*Working class where all the working takes place*/
 
 public class Working {
 	static ArrayList<Integer> time_value;
@@ -40,6 +41,7 @@ public class Working {
 	static ArrayList<String> logfile = new ArrayList<>();
 
 	static int fast_battery;
+	/* Working Class Constructor to Initialize the various variable and constants */
 
 	Working() throws IOException {
 		porta = new Stack<>();
@@ -92,11 +94,6 @@ public class Working {
 		charger_config.put(2, 450);
 
 		west = FileRead.getWest();
-		east = EastRead.getEast();
-//		Schedule1.add("A 0");
-//		Schedule1.add("A 45");
-//		Schedule1.add("B 0");
-//		Schedule1.add("B 60");
 
 		for (int i = 0; i < west.size(); i++) {
 			Schedule1.add(west.get(i));
@@ -108,6 +105,11 @@ public class Working {
 		}
 
 	}
+	/*
+	 * Work function where the initial working of buses between transit take place.
+	 * Parameter integer type battery capacity Return value - ArrayList consisting
+	 * of total buses,price of buses, chargers ,chargers price.
+	 */
 
 	public ArrayList<Integer> Work(int bus_battery_capacity) throws IOException {
 		int pass1 = Integer.parseInt(Charger.charger1_capacity.getSelectedItem().toString());
@@ -131,7 +133,7 @@ public class Working {
 		total_bus = 0;
 		Time = 0;
 
-		for (int i = 997; i >=3; i--) {
+		for (int i = 997; i >= 3; i--) {
 			buses.add("Bus-" + i + " " + bus_battery_capacity);
 
 		}
@@ -139,7 +141,10 @@ public class Working {
 		porta.add("bus-1" + " " + bus_battery_capacity);
 
 		portb.add("bus-2" + " " + bus_battery_capacity);
-
+		/*
+		 * Main time counter to check the schedule time.
+		 * This time is compared with the schedule of buses and charging time of charger
+		 */
 		for (int i = 0; i < 3000; i++) {
 			Time = i;
 
@@ -177,15 +182,14 @@ public class Working {
 								int t = (int) (Time + 40);
 
 								String port3 = "B";
-								 
 
 								String arrival = fastText(Time);
 
 								String destination = fastText(t);
-								// System.out.println("destination---"+destination);
-								logfile.add("Arrival port" + " : " +"  Lionel-Groulx " + " | " + busid + " | " + "  "+ arrival
-										+"      " + " - " + destination + " | " + "Destination Port" + " "
-										+ "   MacDonald    "+ " | "+ "  battery Remaining  " + b_left+ " | ");
+
+								logfile.add("Arrival port" + " : " + "  Lionel-Groulx " + " | " + busid + " | " + "  "
+										+ arrival + "      " + " - " + destination + " | " + "Destination Port" + " "
+										+ "   MacDonald    " + " | " + "  battery Remaining  " + b_left + " | ");
 
 								intransit.add(port3 + " " + t + " " + busid + " " + b_left);
 
@@ -193,7 +197,7 @@ public class Working {
 
 							else {
 
-								fastCharging(port, Time,peek[0]);
+								fastCharging(port, Time, peek[0]);
 
 							}
 
@@ -211,9 +215,9 @@ public class Working {
 							String port1 = "B";
 							String arrival = fastText(Time);
 							String destination = fastText(t);
-							logfile.add("Arrival port" + " : " + "  Lionel-Groulx " + " | " + busid + " | " + "  "+ arrival
-									+"      " + " - " + destination + " | " + "Destination Port" + " "
-									+"   MacDonald    "+ " | " + "  battery Remaining  " + b_left1+ " | ");
+							logfile.add("Arrival port" + " : " + "  Lionel-Groulx " + " | " + busid + " | " + "  "
+									+ arrival + "      " + " - " + destination + " | " + "Destination Port" + " "
+									+ "   MacDonald    " + " | " + "  battery Remaining  " + b_left1 + " | ");
 							intransit.add(port1 + " " + t + " " + busid + " " + b_left1);
 						}
 					}
@@ -233,16 +237,16 @@ public class Working {
 								String port3 = "A";
 								String arrival = fastText(Time);
 								String destination = fastText(t);
-								logfile.add("Arrival port" + " : " + "   MacDonald    " + " | " + busid + " | " + "  "+ arrival
-										+"      " + " - " + destination + " | " + "Destination Port" + " "
-										+ "  Lionel-Groulx " + " | "+ "  battery Remaining  " + b_left+ " | ");
+								logfile.add("Arrival port" + " : " + "   MacDonald    " + " | " + busid + " | " + "  "
+										+ arrival + "      " + " - " + destination + " | " + "Destination Port" + " "
+										+ "  Lionel-Groulx " + " | " + "  battery Remaining  " + b_left + " | ");
 
 								intransit.add(port3 + " " + t + " " + busid + " " + b_left);
 
 							}
 
 							else {
-								fastCharging(port, Time,peek[0]);
+								fastCharging(port, Time, peek[0]);
 
 							}
 
@@ -257,11 +261,11 @@ public class Working {
 							int left1 = Integer.parseInt(ax[1]) - 40;
 							int t = Time + 40;
 							String port4 = "A";
-							String arrival= fastText(Time);
-							String destination= fastText(Time+40);
-							logfile.add("Arrival port" + " : " + "   MacDonald    " + " | " + id + " | " + "  "+ arrival
-									+"      " + " - " + destination + " | " + "Destination Port" + " "
-									+ "  Lionel-Groulx "+ " | "+ "  battery Remaining  " + left1+ " | ");
+							String arrival = fastText(Time);
+							String destination = fastText(Time + 40);
+							logfile.add("Arrival port" + " : " + "   MacDonald    " + " | " + id + " | " + "  "
+									+ arrival + "      " + " - " + destination + " | " + "Destination Port" + " "
+									+ "  Lionel-Groulx " + " | " + "  battery Remaining  " + left1 + " | ");
 
 							intransit.add(port4 + " " + t + " " + id + " " + left1);
 						}
@@ -322,7 +326,7 @@ public class Working {
 		System.out.println(portB);
 
 		total_charger = ((int) portA + (int) portB);
-		fast_charger= maxA+maxB;
+		fast_charger = maxA + maxB;
 		System.out.println("total bus" + total_bus);
 		slow_charger = total_bus - fast_charger;
 		int total = (fast_charger * Integer.parseInt(Charger.charger2_price.getText().toString())
@@ -336,12 +340,13 @@ public class Working {
 		System.out.println("The number of  Slow chargers: " + slow_charger);
 		System.out.println("The total price of chargers: ");
 		System.out.println("The price of chargers: $ " + total);
-		System.out.println("port A chargers"+maxA);
-		System.out.println("port B chargers"+maxB);
-		
+		System.out.println("port A chargers" + maxA);
+		System.out.println("port B chargers" + maxB);
+/*
+ * File reader implementation to print the Schedule outputs in logFile
+ */
 		PrintWriter outputfile = new PrintWriter(
 				"C:/Users/vansh/Desktop/Poject big data/sqa/Transit-Simulation-System/SQA/ScheduleData/output.txt");
-//		 BufferedWriter out = new BufferedWriter(new FileWriter("C:/Users/vansh/Desktop/Poject big data/sqa/Transit-Simulation-System/SQA/ScheduleData/output.txt"));
 		for (String st : logfile) {
 
 			outputfile.println(st);
@@ -365,11 +370,14 @@ public class Working {
 		return ret;
 
 	}
-
+/*
+ * fastText method to convet the time into 12 hour time zone
+ * Parameter - Integer value - minutes
+ * Return value- String type time
+ */
 	public static String fastText(Integer a) {
 
 		int minute = a;
-		 
 
 		int hour = minute / 60;
 		minute %= 60;
@@ -386,19 +394,23 @@ public class Working {
 		return abc;
 
 	}
-	static int maxA=0;
-	static int maxB=0;
 
-	private static void fastCharging(String p, int time,String id) {
+	static int maxA = 0;
+	static int maxB = 0;
+/*
+ * fastcharging funtion which calculates the charging required for buses and charge them for 15 minutes.
+ * Two parameters String type Destination name and another is string type bus id
+ */
+	private static void fastCharging(String p, int time, String id) {
 
 		time_value.add(time);
-		 
+
 		if (p.equalsIgnoreCase("A")) {
 
 			fast_charging.add(porta.pop() + " A");
-			  if(fast_charging.size()>maxA) {
-				  maxA=fast_charging.size();
-			  }
+			if (fast_charging.size() > maxA) {
+				maxA = fast_charging.size();
+			}
 			if (!porta.isEmpty()) {
 
 				String v = porta.pop();
@@ -408,22 +420,21 @@ public class Working {
 
 				int t = (int) time + 40;
 				String port1 = "B";
-				String arrival =fastText(time);
-				String destination =fastText(t);
-				logfile.add("Arrival port" + " : " + "  Lionel-Groulx " + " | " + busid + " | " + "  "+ arrival
-						+"      " + " - " + destination + " | " + "Destination Port" + " "
-						+ "   MacDonald    "+ " | "+ "  battery Remaining  " + b_left1+ " | ");
+				String arrival = fastText(time);
+				String destination = fastText(t);
+				logfile.add("Arrival port" + " : " + "  Lionel-Groulx " + " | " + busid + " | " + "  " + arrival
+						+ "      " + " - " + destination + " | " + "Destination Port" + " " + "   MacDonald    " + " | "
+						+ "  battery Remaining  " + b_left1 + " | ");
 				intransit.add(port1 + " " + t + " " + busid + " " + b_left1);
 			}
 		}
 
 		if (p.equalsIgnoreCase("B")) {
-			
 
 			fast_charging.add(portb.pop() + " B");
-			if(fast_charging.size()>maxB) {
-				  maxB=fast_charging.size();
-			  }
+			if (fast_charging.size() > maxB) {
+				maxB = fast_charging.size();
+			}
 			if (!portb.isEmpty()) {
 
 				String v = portb.pop();
@@ -433,11 +444,11 @@ public class Working {
 
 				int t = (int) Time + 40;
 				String port1 = "A";
-				String arrival =fastText(time);
-				String destination =fastText(t);
-				logfile.add("Arrival port" + " : " + "   MacDonald    " + " | " + busid + " | " + "  "+ arrival
-						+"      " + " - " + destination + " | " + "Destination Port" + " "
-						+  "  Lionel-Groulx "+ " | "+ "  battery Remaining  " + b_left1+ " | ");
+				String arrival = fastText(time);
+				String destination = fastText(t);
+				logfile.add("Arrival port" + " : " + "   MacDonald    " + " | " + busid + " | " + "  " + arrival
+						+ "      " + " - " + destination + " | " + "Destination Port" + " " + "  Lionel-Groulx " + " | "
+						+ "  battery Remaining  " + b_left1 + " | ");
 
 				intransit.add(port1 + " " + t + " " + busid + " " + b_left1);
 			}
@@ -449,41 +460,43 @@ public class Working {
 			for (int i = 0; i < fast_charging.size(); i++) {
 				String[] right = fast_charging.get(i).split(" ");
 				fast_charging.remove(i);
-                String arrival =fastText(time);
-                String destination= fastText(time+15);
+				String arrival = fastText(time);
+				String destination = fastText(time + 15);
 				if (right[2].equalsIgnoreCase("A")) {
-					
 
-					porta.add(right[0] + " "
-							+ (Integer.parseInt(right[1])  + ( fast_battery*15)/60));
-					logfile.add("Arrival port" + " : " +  "  Lionel-Groulx " + " | " + id + " | " + "  "+ arrival
-							+"      " + " - " + destination + " | " + "Destination Port" + " "
-							+  "  Lionel-Groulx "+ " | "+ "  battery Remaining  " + (Integer.parseInt(right[1])   + " | "+ " ChargingTime  " +   arrival  + "    " + destination  +" | "+ Charger.charger1_manufacturer.getSelectedItem()+"-"+fast_battery+"KW"+"  |  "+" After Charging "+ (Integer.parseInt(right[1])+(fast_battery *15)/ 60  ) + " | " ));
+					porta.add(right[0] + " " + (Integer.parseInt(right[1]) + (fast_battery * 15) / 60));
+					logfile.add("Arrival port" + " : " + "  Lionel-Groulx " + " | " + id + " | " + "  " + arrival
+							+ "      " + " - " + destination + " | " + "Destination Port" + " " + "  Lionel-Groulx "
+							+ " | " + "  battery Remaining  "
+							+ (Integer.parseInt(right[1]) + " | " + " ChargingTime  " + arrival + "    " + destination
+									+ " | " + Charger.charger1_manufacturer.getSelectedItem() + "-" + fast_battery
+									+ "KW" + "  |  " + " After Charging "
+									+ (Integer.parseInt(right[1]) + (fast_battery * 15) / 60) + " | "));
 				}
 
 				else if (right[2].equalsIgnoreCase("B")) {
 
-					portb.add(right[0] + " "
-							+ (Integer.parseInt(right[1])  + (fast_battery*15) / 60));
-					logfile.add("Arrival port" + " : " + "   MacDonald    " + " | " + id + " | " + "  "+ arrival
-							+"      " + " - " + destination + " | " + "Destination Port" + " "
-							+ "   MacDonald    "+ " | "+ "  battery Remaining  " + (Integer.parseInt(right[1])  + " | "+ " ChargingTime  " +   arrival  + "    " + destination  +" | "+ Charger.charger1_manufacturer.getSelectedItem()+"-"+fast_battery+"KW"+"  |  "+" After Charging "+ (Integer.parseInt(right[1])+(fast_battery *15)/ 60  ) + " | " ));
-							
-			}
-			}
-			}
+					portb.add(right[0] + " " + (Integer.parseInt(right[1]) + (fast_battery * 15) / 60));
+					logfile.add("Arrival port" + " : " + "   MacDonald    " + " | " + id + " | " + "  " + arrival
+							+ "      " + " - " + destination + " | " + "Destination Port" + " " + "   MacDonald    "
+							+ " | " + "  battery Remaining  "
+							+ (Integer.parseInt(right[1]) + " | " + " ChargingTime  " + arrival + "    " + destination
+									+ " | " + Charger.charger1_manufacturer.getSelectedItem() + "-" + fast_battery
+									+ "KW" + "  |  " + " After Charging "
+									+ (Integer.parseInt(right[1]) + (fast_battery * 15) / 60) + " | "));
 
+				}
+			}
 		}
 
-	
+	}
 
 	// TODO Auto-generated method stub
-
-	 public void calculate_Maximum() {
-		 
-		 
-	 }
-	
+ /*
+  * Function charging buses which charges the buses with opportunity charger
+  * This function charges buses at particular time when required
+  * Parameter Time integer type
+  */
 
 	private static void chargeingBuses(int time) {
 
